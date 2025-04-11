@@ -7,38 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      line-height: 1.8;
+      line-height: 1.9;
     }
-    .newthought::first-letter {
-      float: left;
-      font-size: 3rem;
-      line-height: 1;
-      padding-right: 0.1em;
-      font-weight: bold;
+    nav {
+      margin-bottom: 3rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      font-style: italic;
+    }
+    nav a {
+      text-decoration: none;
+      color: #b03b2e;
     }
   </style>
 </head>
 <body>
 
 <article>
-
   <h1>Your Essay Title</h1>
   <p class="subtitle">A subtitle if you want it</p>
 
-  <section>
-    <p><span class="newthought">In the beginning</span>, the university was not a place, but a promise: to pursue understanding beyond the walls of the known.
-    <label for="sn-promise" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sn-promise" class="margin-toggle"/>
+  <nav>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#future">The Future</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </nav>
+
+  <section id="intro">
+    <p>In the beginning, the university was not a place, but a promise: to pursue understanding beyond the walls of the known.
+    <label for="sn1" class="margin-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn1" class="margin-toggle"/>
     <span class="sidenote">See <em>The Age of Generation</em> for a reflection on the role of confusion in scholarly formation.</span></p>
 
-    <p>This is a second paragraph with a <label for="sn-example" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sn-example" class="margin-toggle"/>
+    <p>This is a second paragraph with a 
+    <label for="sn2" class="margin-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn2" class="margin-toggle"/>
     <span class="sidenote">Sidenotes are placed in the margins on wide screens, or inline on mobile.</span>
     footnote-style sidenote.</p>
 
-    <p class="footer">End of section.</p>
+    <p>End of section.</p>
   </section>
 
+  <section id="future">
+    <h2>The Future</h2>
+    <p>We are now reimagining the university as a learning system, not a single institution.</p>
+  </section>
+
+  <section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>And this is the close of the opening essay—a signal to what is next.</p>
+  </section>
 </article>
 
 </body>
