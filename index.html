@@ -1,52 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>The Age of Generation, the End of Thought</title>
-  <link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css"/>
+  <meta charset="UTF-8">
+  <title>Reimagining the University</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    @font-face {
+      font-family: 'et-book';
+      src: url('https://edwardtufte.github.io/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
-      line-height: 1.9;
+      font-family: 'et-book', Georgia, serif;
+      font-size: 1.125rem;
+      background-color: #fdfcf9;
+      color: #111;
+      margin: 0;
+      padding: 4rem 1.5rem;
+      line-height: 1.85;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    nav {
+
+    header {
       margin-bottom: 3rem;
+      text-align: left;
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
+
+    .byline {
+      font-size: 0.95rem;
+      color: #444;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    h2.subtitle {
       font-style: italic;
+      font-weight: normal;
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: #555;
     }
+
+    nav {
+      font-variant: small-caps;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 2rem;
+    }
+
     nav a {
+      margin-right: 1.2rem;
       text-decoration: none;
-      color: #b03b2e;
+      color: #000;
+    }
+
+    .section-number {
+      text-align: center;
+      font-size: 1rem;
+      font-variant: small-caps;
+      color: #666;
+      margin-bottom: 1rem;
+      margin-top: 3rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .raised::first-letter {
+      font-variant: small-caps;
+      font-size: 1.25rem;
+      line-height: 0.6;
+      vertical-align: baseline;
+      position: relative;
+      top: -0.3em;
+      padding-right: 0.1rem;
+      color: #222;
+    }
+
+    .sidenote {
+      float: right;
+      clear: right;
+      margin-right: -240px;
+      width: 220px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      position: relative;
+      color: #666;
+    }
+
+    .margin-toggle {
+      display: none;
+    }
+
+    label.sidenote-number {
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .sidenote {
+        float: none;
+        display: block;
+        margin: 1rem 0;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<article>
-  <h1>The Age of Generation, the End of Thought</h1>
-  <p class="subtitle">A public essay in development</p>
-
+<header>
+  <div class="byline">Chindu Sreedharan</div>
+  <h1>Reimagining the University</h1>
+  <h2 class="subtitle">A public essay in development</h2>
   <nav>
-    <ul>
-      <li><a href="#intro">Introduction</a></li>
-      <li><a href="#future">The Future</a></li>
-      <li><a href="#conclusion">Conclusion</a></li>
-    </ul>
+    <a href="#prologue">1. Prologue</a>
+    <a href="#genesis">2. Genesis</a>
+    <a href="#invocation">3. Invocation</a>
+    <a href="#foresight">4. Foresight</a>
+    <a href="#epilogue">5. Epilogue</a>
   </nav>
+</header>
 
-  <section id="intro">
-  <p>Is the university merely a place? Was it ever, really?</p>
+<section id="prologue">
+  <div class="section-number">1.</div>
 
-  <p>We tend to think of it as a campus, a set of buildings, a lecture theatre. But the university, if it ever was only a place, was always something more. What distinguished it was not its architecture—though that, too, was often remarkable—but its role as a site of knowledgemaking, and the grammar it offered for that work: the rules, forms, and disciplines that gave inquiry structure and rigour. It was a system that gave shape to the chaos of your thoughts, a scaffolding that enabled you to transform over time. Place mattered, then, not as enclosure, but as ground—a foundation for a culture of thinking to emerge.</p>
+  <p class="raised">Is the university merely a place? Was it ever, really?</p>
 
-  <p>A long time ago, when I began my PhD, my supervisor—an academic Gandolf, a Bhishmacharya to professors many—told me the first six months would be marked by confusion. Not the kind to shake off, but the kind to stay with: days when nothing connects, when texts resist interpretation, when the thread of inquiry wraps itself around you, twisted and tightening. At the time, I thought he was preparing me for the hardship of the academy. Later, I understood he was describing the texture of intellectual labour.</p>
+  <p>We tend to think of it as a campus, a set of buildings, a lecture theatre. But the university, if it ever was only a place, was always something more. What distinguished it was not its architecture—though that, too, was often remarkable—but its role as a site of knowledgemaking, and the grammar it offered for that work: the rules, forms, and disciplines that gave inquiry structure and rigour. It was a system that gave shape to the chaos of your thoughts, a scaffolding that enabled you to transform o...
+    <label for="sn1" class="margin-toggle sidenote-number"></label>
+    <input type="checkbox" id="sn1" class="margin-toggle"/>
+    <span class="sidenote">See <em>The Age of Generation</em> for more on the pedagogical value of confusion.</span>
+  </p>
 
-  <p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent circling an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to understand that confusion was not the opposite of clarity. It was its condition. The university offered a way to move toward knowledge. It gave you the courage, the certainty—the epistemological confidence—that if you stayed with uncertainty long enough, something coherent would emerge. Confusion, then, was not a failure of thinking, but its method.</p>
+  <p>A long time ago, when I began my PhD, my supervisor—an academic Gandolf, a Bhishmacharya to professors many—told me the first six months would be marked by confusion. Not the kind to shake off, but the kind to stay with: days when nothing connects, when texts resist interpretation, when the thread of inquiry wraps itself around you, twisted and tightening. At the time, I thought he was preparing me for the hardship of the academy. Later, I understood he was describing the texture of intellectual lab...
+
+  <p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent circling an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to understand that confusion was not the opposite of clarity. It was its condition. The university offered a way to move toward knowledge. It gave you the courage, the certainty—the epistemological confidence—that if you stayed with uncertainty long enough, something coherent would emerge....
 
   <p>Some weeks ago, I sat in a meeting of PhD supervisors. The conversation turned—as it often does now—to students using AI to write. My colleague, wise, bespectacled, parodically professorial, save for the missing elbow patches, said flatly: AI just can’t produce doctoral-level work. No one disagreed. Which, in academia, is saying something.</p>
 
@@ -54,29 +154,6 @@
 
   <p>But there is danger here in separating writing from thinking. Writing, I would argue, is not the afterthought of thought. It <em>is</em> thinking. Often, it is the discipline through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.</p>
 </section>
-    <label for="sn1" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sn1" class="margin-toggle"/>
-    <span class="sidenote">See <em>The Age of Generation</em> for a reflection on the role of confusion in scholarly formation.</span></p>
-
-    <p>This is a second paragraph with a 
-    <label for="sn2" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sn2" class="margin-toggle"/>
-    <span class="sidenote">Sidenotes are placed in the margins on wide screens, or inline on mobile.</span>
-    footnote-style sidenote.</p>
-
-    <p>End of section.</p>
-  </section>
-
-  <section id="future">
-    <h2>The Future</h2>
-    <p>We are now reimagining the university as a learning system, not a single institution.</p>
-  </section>
-
-  <section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>And this is the close of the opening essay—a signal to what is next.</p>
-  </section>
-</article>
 
 </body>
 </html>
