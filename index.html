@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reimagining the University</title>
+  <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     @font-face {
@@ -19,8 +19,8 @@
       color: #111;
       margin: 0;
       padding: 4rem 1.5rem;
-      line-height: 1.85;
-      max-width: 720px;
+      line-height: 1.6;
+      max-width: 660px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -29,12 +29,14 @@
       font-variant: small-caps;
       font-size: 0.95rem;
       letter-spacing: 0.03em;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     nav a {
       margin-right: 1.2rem;
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: #bbb;
+      text-underline-offset: 3px;
       color: #000;
     }
 
@@ -52,42 +54,51 @@
       font-style: italic;
       font-weight: normal;
       font-size: 1.15rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.0rem;
       color: #555;
     }
 
     .byline {
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
       font-variant: small-caps;
       color: #666;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
     }
 
     .section-number {
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-variant: small-caps;
       color: #666;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       margin-top: 3rem;
     }
 
     p {
       margin-bottom: 1.5rem;
-      text-align: justify;
-      text-justify: inter-word;
+      text-align: left;
     }
 
     .raised::first-letter {
+      font-size: 2rem;
       font-variant: small-caps;
-      font-size: 1.25rem;
       line-height: 0.6;
       vertical-align: baseline;
       position: relative;
       top: -0.3em;
       padding-right: 0.1rem;
       color: #222;
+    }
+
+    /* --- Sidenotes --- */
+    .sidenote-number sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      position: relative;
+      top: -0.3em;
+      cursor: pointer;
     }
 
     .sidenote {
@@ -99,14 +110,33 @@
       line-height: 1.4;
       position: relative;
       color: #666;
+      margin-top: 1.5rem;
     }
 
-    .margin-toggle {
+    .sidenote::before {
+      content: attr(data-number) ". ";
+      font-size: 0.75rem;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .sidenote.collapsible {
       display: none;
     }
 
-    label.sidenote-number {
+    .sidenote.active {
+      display: block;
+    }
+
+    .toggle-button {
+      display: inline-block;
+      background: #eee;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.85rem;
+      margin: 2rem 0 1rem;
       cursor: pointer;
+      font-family: 'et-book', Georgia, serif;
     }
 
     @media (max-width: 900px) {
@@ -117,45 +147,85 @@
         width: 100%;
       }
     }
+
+    /* --- Endnotes --- */
+    #endnotes {
+      margin-top: 3rem;
+    }
+
+    #endnotes.hidden {
+      display: none;
+    }
+
+    #endnotes h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: #444;
+      font-variant: small-caps;
+      margin-bottom: 1rem;
+    }
+
+    #endnotes p {
+      margin-bottom: 1rem;
+    }
+
+    #endnotes strong {
+      font-weight: bold;
+      color: #444;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#prologue">1. Prologue</a>
+    <a href="#genesis">2. Genesis</a>
+    <a href="#invocation">3. Invocation</a>
+    <a href="#foresight">4. Foresight</a>
+    <a href="#epilogue">5. Epilogue</a>
+  </nav>
 
-<nav>
-  <a href="#prologue">1. Prologue</a>
-  <a href="#genesis">2. Genesis</a>
-  <a href="#invocation">3. Invocation</a>
-  <a href="#foresight">4. Foresight</a>
-  <a href="#epilogue">5. Epilogue</a>
-</nav>
+  <header>
+    <h1>The Age of Generation, the End of Thought</h1>
+    <h2 class="subtitle">A public essay in development</h2>
+    <div class="byline">Chindu Sreedharan</div>
+  </header>
 
-<header>
-  <h1>Reimagining the University</h1>
-  <h2 class="subtitle">A public essay in development</h2>
-  <div class="byline">Chindu Sreedharan</div>
-</header>
+  <section id="prologue">
+    <div class="section-number">1.</div>
 
-<section id="prologue">
-  <div class="section-number">1.</div>
+    <p class="raised">Is the university merely a place? Was it ever, really?</p>
 
-  <p class="raised">Is the university merely a place? Was it ever, really?</p>
+    <p>
+      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
+      <span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
+      <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
+    </p>
 
-  <p>We tend to think of it as a campus, a set of buildings, a lecture theatre. But the university, if it ever was only a place, was always something more. What distinguished it was not its architecture—though that, too, was often remarkable—but its role as a site of knowledgemaking, and the grammar it offered for that work: the rules, forms, and disciplines that gave inquiry structure and rigour. It was a system that gave shape to the chaos of your thoughts, a scaffolding that enabled you to transform o...
-    <label for="sn1" class="margin-toggle sidenote-number"></label>
-    <input type="checkbox" id="sn1" class="margin-toggle"/>
-    <span class="sidenote">See <em>The Age of Generation</em> for more on the pedagogical value of confusion.</span>
-  </p>
+    <p>
+      Writing is a recursive gesture.
+      <span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
+    </p>
 
-  <p>A long time ago, when I began my PhD, my supervisor—an academic Gandolf, a Bhishmacharya to professors many—told me the first six months would be marked by confusion. Not the kind to shake off, but the kind to stay with: days when nothing connects, when texts resist interpretation, when the thread of inquiry wraps itself around you, twisted and tightening. At the time, I thought he was preparing me for the hardship of the academy. Later, I understood he was describing the texture of intellectual lab...
+    <button class="toggle-button" onclick="toggleEndnotes()">Endnotes</button>
+  </section>
 
-  <p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent circling an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to understand that confusion was not the opposite of clarity. It was its condition. The university offered a way to move toward knowledge. It gave you the courage, the certainty—the epistemological confidence—that if you stayed with uncertainty long enough, something coherent would emerge....
+  <section id="endnotes" class="hidden">
+    <h2>Endnotes</h2>
+    <p><strong>1.</strong> This is a formal citation note linked to the first sidenote.</p>
+    <p><strong>2.</strong> This footnote expands on recursion as a philosophical principle.</p>
+  </section>
 
-  <p>Some weeks ago, I sat in a meeting of PhD supervisors. The conversation turned—as it often does now—to students using AI to write. My colleague, wise, bespectacled, parodically professorial, save for the missing elbow patches, said flatly: AI just can’t produce doctoral-level work. No one disagreed. Which, in academia, is saying something.</p>
+  <script>
+    function toggleSidenote(id) {
+      const note = document.getElementById(`sidenote-${id}`);
+      note.classList.toggle('active');
+    }
 
-  <p>In most cases, my colleague was right. He was speaking, of course, about <em>writing</em>. The outputs are often fluent in form but hollow at the core. Not, I think, because current iterations of generative AI are fundamentally incapable of decent writing, but because most students don’t yet know how to use them well. In the hands of an articulate doctoral candidate, I suspect, a passable thesis could already be assembled.</p>
-
-  <p>But there is danger here in separating writing from thinking. Writing, I would argue, is not the afterthought of thought. It <em>is</em> thinking. Often, it is the discipline through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.</p>
-</section>
-
+    function toggleEndnotes() {
+      document.getElementById('endnotes').classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
