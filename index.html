@@ -23,6 +23,7 @@
       max-width: 660px;
       margin-left: auto;
       margin-right: auto;
+      counter-reset: sidenote-counter;
     }
 
     nav {
@@ -109,6 +110,7 @@
       position: relative;
       color: #666;
       margin-top: 1.5rem;
+      counter-increment: sidenote-counter;
     }
 
     .sidenote::before {
