@@ -129,12 +129,21 @@
 
     .mobile-endnotes {
       display: none;
-      font-size: 0.95rem;
+      font-size: 1.125rem;
+      font-family: 'et-book', Georgia, serif;
       color: #555;
+      margin-top: 4rem;
+    }
+
+    .mobile-endnotes h3 {
+      font-size: 1.1rem;
+      font-variant: small-caps;
+      margin-bottom: 1rem;
     }
 
     .mobile-endnotes li {
       margin-bottom: 0.8rem;
+      list-style-position: inside;
     }
 
     @media (max-width: 900px) {
@@ -144,7 +153,6 @@
 
       .mobile-endnotes {
         display: block;
-        margin-top: 2rem;
       }
     }
   </style>
@@ -178,13 +186,21 @@
     <p>
       Writing is a recursive gesture.<label class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></label>
       <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
+ At the Breaker, we've created something we call the <strong>Node:</strong> an editorial workflow designed to harness the strengths of our small newsroom and enhance collaborative journalism. This system bridges professional practice with pedagogical development, serving as both a production framework and a teaching methodology.
+
+Node provides a structured yet flexible approach where students engage in professional editorial practices while developing the adaptability and innovation needed for modern journalism. Within this framework, each student takes on two roles: reporter (producing a story) and story editor (editing a peer's work), but they also share responsibility for shaping the edition as a whole. The newsroom operates as a collective, where students critique, refine, and guide the publication, ensuring cohesion across stories.
+
+Good journalism requires both rigorous standards and fresh approaches to storytelling. That's why Node embraces both traditional editorial practices and experimentation. We've thoughtfully integrated AI tools into our workflow, not to replace human judgement, but to complement it. We think of AI as another set of eyes—a tool to strengthen human journalism. Through an iterative feedback loop that incorporates AI, the editorial process enhances both journalistic quality and learning outcomes.
     </p>
   </section>
 
-  <ol class="mobile-endnotes">
-    <li id="endnote-1">1. This is a sidenote. It sits to the right on large screens, and drops below on mobile.</li>
-    <li id="endnote-2">2. Recursion here does not mean repetition, but progressive transformation.</li>
-  </ol>
+  <section class="mobile-endnotes">
+    <h3>Endnotes</h3>
+    <ol>
+      <li id="endnote-1">1. This is a sidenote. It sits to the right on large screens, and drops below on mobile.</li>
+      <li id="endnote-2">2. Recursion here does not mean repetition, but progressive transformation.</li>
+    </ol>
+  </section>
 
   <script>
     function toggleSidenote(id) {
