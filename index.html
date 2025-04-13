@@ -91,14 +91,12 @@
       color: #222;
     }
 
-    /* --- Sidenotes --- */
-    .sidenote-number sup {
+    label.sidenote-number sup {
       font-size: 0.75rem;
       color: #999;
       vertical-align: super;
       position: relative;
       top: -0.3em;
-      cursor: pointer;
     }
 
     .sidenote {
@@ -114,7 +112,7 @@
     }
 
     .sidenote::before {
-      content: attr(data-number) ". ";
+      content: counter(sidenote-counter) ". ";
       font-size: 0.75rem;
       color: #999;
       font-weight: normal;
@@ -133,10 +131,9 @@
       background: #eee;
       border: none;
       padding: 0.25rem 0.5rem;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin: 2rem 0 1rem;
       cursor: pointer;
-      font-family: 'et-book', Georgia, serif;
     }
 
     @media (max-width: 900px) {
@@ -146,33 +143,6 @@
         margin: 1rem 0;
         width: 100%;
       }
-    }
-
-    /* --- Endnotes --- */
-    #endnotes {
-      margin-top: 3rem;
-    }
-
-    #endnotes.hidden {
-      display: none;
-    }
-
-    #endnotes h2 {
-      font-size: 1.25rem;
-      font-weight: normal;
-      color: #444;
-      font-variant: small-caps;
-      margin-bottom: 1rem;
-    }
-
-    #endnotes p {
-      margin-bottom: 1rem;
-    }
-
-    #endnotes strong {
-      font-weight: bold;
-      color: #444;
-      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -198,33 +168,20 @@
 
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
-      <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
+      <label class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></label>
+      <span id="sidenote-1" class="sidenote collapsible">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
     </p>
 
     <p>
-      Writing is a recursive gesture.
-      <span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
-      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
+      Writing is a recursive gesture.<label class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></label>
+      <span id="sidenote-2" class="sidenote collapsible">Recursion here does not mean repetition, but progressive transformation.</span>
     </p>
-
-    <button class="toggle-button" onclick="toggleEndnotes()">Endnotes</button>
-  </section>
-
-  <section id="endnotes" class="hidden">
-    <h2>Endnotes</h2>
-    <p><strong>1.</strong> This is a formal citation note linked to the first sidenote.</p>
-    <p><strong>2.</strong> This footnote expands on recursion as a philosophical principle.</p>
   </section>
 
   <script>
     function toggleSidenote(id) {
       const note = document.getElementById(`sidenote-${id}`);
       note.classList.toggle('active');
-    }
-
-    function toggleEndnotes() {
-      document.getElementById('endnotes').classList.toggle('hidden');
     }
   </script>
 </body>
