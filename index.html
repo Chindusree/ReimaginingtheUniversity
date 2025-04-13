@@ -127,12 +127,24 @@
       display: block;
     }
 
+    .mobile-endnotes {
+      display: none;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .mobile-endnotes li {
+      margin-bottom: 0.8rem;
+    }
+
     @media (max-width: 900px) {
       .sidenote {
-        float: none;
+        display: none;
+      }
+
+      .mobile-endnotes {
         display: block;
-        margin: 1rem 0;
-        width: 100%;
+        margin-top: 2rem;
       }
     }
   </style>
@@ -153,7 +165,7 @@
   </header>
 
   <section id="prologue">
-<div class="section-number">1.</div>
+    <div class="section-number">1.</div>
 
     <p class="raised">Is the university merely a place? Was it ever, really?</p>
 
@@ -165,14 +177,24 @@
 
     <p>
       Writing is a recursive gesture.<label class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></label>
-      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span> The problem again is how much text we have, and the question is whether we should have this display as sidenotes on mobile?
-    </p>
-  </section>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span> The problem is that there isn't enough text. Shall we add more text to check this out properly?
+  </p>
+</section>
+
+  <ol class="mobile-endnotes">
+    <li id="endnote-1">This is a sidenote. It sits to the right on large screens, and drops below on mobile. <a href="#">↩</a></li>
+    <li id="endnote-2">Recursion here does not mean repetition, but progressive transformation. <a href="#">↩</a></li>
+  </ol> 
 
   <script>
     function toggleSidenote(id) {
-      const note = document.getElementById(`sidenote-${id}`);
-      note.classList.toggle('active');
+      const isMobile = window.innerWidth < 900;
+      const sidenote = document.getElementById(`sidenote-${id}`);
+      if (!isMobile) {
+        sidenote.classList.toggle('active');
+      } else {
+        document.getElementById(`endnote-${id}`).scrollIntoView({ behavior: 'smooth' });
+      }
     }
   </script>
 </body>
