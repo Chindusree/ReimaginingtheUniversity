@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     @font-face {
       font-family: 'et-book';
@@ -91,15 +92,6 @@
       color: #222;
     }
 
-    label.sidenote-number sup {
-      font-size: 0.75rem;
-      color: #999;
-      vertical-align: super;
-      position: relative;
-      top: -0.3em;
-      cursor: pointer;
-    }
-
     .sidenote {
       float: right;
       clear: right;
@@ -109,54 +101,39 @@
       line-height: 1.4;
       position: relative;
       color: #666;
-      margin-top: 1.5rem;
     }
 
-    .sidenote::before {
-      content: attr(data-number) ". ";
-      font-size: 0.75rem;
+    .sidenote-ref {
+      text-decoration: none;
       color: #999;
-      font-weight: normal;
+      font-size: 0.75rem;
     }
 
-    .sidenote.collapsible {
+    .return-link {
       display: none;
-    }
-
-    .sidenote.active {
-      display: block;
-    }
-
-    .mobile-endnotes {
-      display: none;
-      font-size: 1.125rem;
-      font-family: 'et-book', Georgia, serif;
-      color: #555;
-      margin-top: 4rem;
-    }
-
-    .mobile-endnotes h3 {
-      font-size: 1.1rem;
-      font-variant: small-caps;
-      margin-bottom: 1rem;
-    }
-
-    .mobile-endnotes li {
-      margin-bottom: 0.8rem;
-      list-style-position: inside;
     }
 
     @media (max-width: 900px) {
       .sidenote {
-        display: none !important;
-      }
-
-      .mobile-endnotes {
+        float: none;
         display: block;
+        margin: 1rem 0;
+        width: 100%;
+        background-color: #f9f9f9;
+        padding: 0.5rem 1rem;
+        border-left: 3px solid #ccc;
+      }
+      .return-link {
+        display: inline;
+        font-size: 0.75rem;
+        color: #999;
+        text-decoration: none;
+        margin-left: 0.5rem;
       }
     }
   </style>
 </head>
+
 <body>
   <nav>
     <a href="#prologue">1. Prologue</a>
@@ -179,39 +156,16 @@
 
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <label class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></label>
-      <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
+      <span id="ref1"><sup><a href="#sn1" class="sidenote-ref">1</a></sup></span>
+      <span class="sidenote" id="sn1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.<a href="#ref1" class="return-link">↩</a></span>On the Breaker, we've created something we call the Node: an editorial workflow designed to harness the strengths of our small newsroom and enhance collaborative journalism. This system bridges professional practice with pedagogical development, serving as both a production framework and a teaching methodology.
     </p>
-
-    <p>
-      Writing is a recursive gesture.<label class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></label>
-      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
- At the Breaker, we've created something we call the <strong>Node:</strong> an editorial workflow designed to harness the strengths of our small newsroom and enhance collaborative journalism. This system bridges professional practice with pedagogical development, serving as both a production framework and a teaching methodology.
-
-Node provides a structured yet flexible approach where students engage in professional editorial practices while developing the adaptability and innovation needed for modern journalism. Within this framework, each student takes on two roles: reporter (producing a story) and story editor (editing a peer's work), but they also share responsibility for shaping the edition as a whole. The newsroom operates as a collective, where students critique, refine, and guide the publication, ensuring cohesion across stories.
-
-Good journalism requires both rigorous standards and fresh approaches to storytelling. That's why Node embraces both traditional editorial practices and experimentation. We've thoughtfully integrated AI tools into our workflow, not to replace human judgement, but to complement it. We think of AI as another set of eyes—a tool to strengthen human journalism. Through an iterative feedback loop that incorporates AI, the editorial process enhances both journalistic quality and learning outcomes.
+    Writing is a recursive gesture.
+    <span id="ref2"><sup><a href="#sn2" class="sidenote-ref">2</a></sup></span>
+    <span class="sidenote" id="sn2">Recursion here does not mean repetition, but progressive transformation.<a href="#ref2" class="return-link">↩</a></span>Node provides a structured yet flexible approach where students engage in professional editorial practices while developing the adaptability and innovation needed for modern journalism. Within this framework, each student takes on two roles: reporter (producing a story) and story editor (editing a peer's work), but they also share responsibility for shaping the edition as a whole. The newsroom operates as a collective, where students critique, refine, and guide the publication, ensuring cohesion across stories.
+  
+  <p>Good journalism requires both rigorous standards and fresh approaches to storytelling. That's why Node embraces both traditional editorial practices and experimentation. We've thoughtfully integrated AI tools into our workflow, not to replace human judgement, but to complement it. We think of AI as another set of eyes—a tool to strengthen human journalism. Through an iterative feedback loop that incorporates AI, the editorial process enhances both journalistic quality and learning outcomes.
+      </p>
     </p>
   </section>
-
-  <section class="mobile-endnotes">
-    <h3>Endnotes</h3>
-    <ol>
-      <li id="endnote-1">1. This is a sidenote. It sits to the right on large screens, and drops below on mobile.</li>
-      <li id="endnote-2">2. Recursion here does not mean repetition, but progressive transformation.</li>
-    </ol>
-  </section>
-
-  <script>
-    function toggleSidenote(id) {
-      const isMobile = window.innerWidth < 900;
-      const sidenote = document.getElementById(`sidenote-${id}`);
-      if (!isMobile) {
-        sidenote.classList.toggle('active');
-      } else {
-        document.getElementById(`endnote-${id}`).scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
 </body>
 </html>
