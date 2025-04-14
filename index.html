@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
     @font-face {
       font-family: 'et-book';
@@ -93,20 +92,13 @@
     }
 
     /* --- Sidenotes --- */
-    label.sidenote-number {
-      cursor: pointer;
-    }
-
-    label.sidenote-number sup {
+    .sidenote-number sup {
       font-size: 0.75rem;
       color: #999;
       vertical-align: super;
       position: relative;
       top: -0.3em;
-    }
-
-    .margin-toggle {
-      display: none;
+      cursor: pointer;
     }
 
     .sidenote {
@@ -118,13 +110,33 @@
       line-height: 1.4;
       position: relative;
       color: #666;
+      margin-top: 1.5rem;
     }
 
-    .sidenote-number + input.margin-toggle + .sidenote::before {
+    .sidenote::before {
       content: attr(data-number) ". ";
       font-size: 0.75rem;
-      font-weight: bold;
       color: #999;
+      font-weight: normal;
+    }
+
+    .sidenote.collapsible {
+      display: none;
+    }
+
+    .sidenote.active {
+      display: block;
+    }
+
+    .toggle-button {
+      display: inline-block;
+      background: #eee;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.85rem;
+      margin: 2rem 0 1rem;
+      cursor: pointer;
+      font-family: 'et-book', Georgia, serif;
     }
 
     @media (max-width: 900px) {
@@ -136,24 +148,35 @@
       }
     }
 
-    /* --- Link Styling --- */
-    a {
-      color: #3c6e91;
-      text-decoration: underline;
-      text-decoration-color: #aab7c4;
-      text-underline-offset: 3px;
+    /* --- Endnotes --- */
+    #endnotes {
+      margin-top: 3rem;
     }
 
-    a:visited {
-      color: #6b4c5b;
-      text-decoration-color: #c9a3b6;
+    #endnotes.hidden {
+      display: none;
     }
 
+    #endnotes h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: #444;
+      font-variant: small-caps;
+      margin-bottom: 1rem;
+    }
+
+    #endnotes p {
+      margin-bottom: 1rem;
+    }
+
+    #endnotes strong {
+      font-weight: bold;
+      color: #444;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
-
 <body>
-
   <nav>
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
@@ -175,15 +198,34 @@
 
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <label for="sn1" class="sidenote-number"><sup>1</sup></label><input type="checkbox" id="sn1" class="margin-toggle" />
-      <span class="sidenote" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below the paragraph on small screens.</span> We need more text to make this work. Hence, I am adding more text.
+      <span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
+      <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
     </p>
 
-<p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent circling an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to <a href=“www.bournemouth.ac.uk”>understand</a> that confusion was not the opposite of clarity. It was its condition. The university offered a way to move toward knowledge. It gave you the courage, the certainty—the epistemological confidence—that if you stayed with uncertainty long enough, something coherent would emerge. Confusion, then, was not a failure of thinking, but its method.
-</p>
+    <p>
+      Writing is a recursive gesture.
+      <span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
+    </p>
 
+    <button class="toggle-button" onclick="toggleEndnotes()">Toggle Endnotes</button>
   </section>
 
+  <section id="endnotes" class="hidden">
+    <h2>Endnotes</h2>
+    <p><strong>1.</strong> This is a formal citation note linked to the first sidenote.</p>
+    <p><strong>2.</strong> This footnote expands on recursion as a philosophical principle.</p>
+  </section>
+
+  <script>
+    function toggleSidenote(id) {
+      const note = document.getElementById(`sidenote-${id}`);
+      note.classList.toggle('active');
+    }
+
+    function toggleEndnotes() {
+      document.getElementById('endnotes').classList.toggle('hidden');
+    }
+  </script>
 </body>
 </html>
-
