@@ -1,200 +1,278 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Age of Generation, the End of Thought</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-roman-line-figures.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-display-italic-old-style-figures.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-bold-line-figures.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-semi-bold-old-style-figures.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-  }
-</style>
-
-  body {
-    font-family: 'et-book', Georgia, serif;
-    font-size: 1.125rem;
-    background-color: #fdfcf9;
-    color: #111;
-    margin: 0;
-    padding: 4rem 1.5rem;
-    line-height: 1.6;
-    max-width: 660px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  nav {
-    font-variant: small-caps;
-    font-size: 0.95rem;
-    letter-spacing: 0.03em;
-    margin-bottom: 2.5rem;
-  }
-
-  nav a {
-    margin-right: 1.2rem;
-    text-decoration: underline;
-    text-decoration-color: #bbb;
-    text-underline-offset: 3px;
-    color: #000;
-  }
-
-  header {
-    margin-bottom: 3rem;
-    text-align: left;
-  }
-
-  h1 {
-    font-size: 2.1rem;
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-  }
-
-  h2.subtitle {
-    font-style: italic;
-    font-weight: normal;
-    font-size: 1.15rem;
-    margin-bottom: 1.0rem;
-    color: #555;
-  }
-
-  .byline {
-    font-size: 1.3rem;
-    letter-spacing: 0.06em;
-    font-variant: small-caps;
-    color: #666;
-    margin-bottom: 2.2rem;
-    font-weight: 600;
-  }
-
-  .section-number {
-    text-align: center;
-    font-size: 1.1rem;
-    font-variant: small-caps;
-    color: #666;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-
-  .raised::first-letter {
-    font-size: 2rem;
-    font-variant: small-caps;
-    line-height: 0.6;
-    vertical-align: baseline;
-    position: relative;
-    top: -0.3em;
-    padding-right: 0.1rem;
-    color: #222;
-  }
-
-  .sidenote-number sup {
-    font-size: 0.75rem;
-    color: #999;
-    vertical-align: super;
-    position: relative;
-    top: -0.3em;
-    cursor: pointer;
-    font-weight: normal;
-  }
-
-  .sidenote-number a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .sidenote {
-    float: right;
-    clear: right;
-    margin-right: -240px;
-    width: 220px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    position: relative;
-    color: #666;
-    margin-top: 1.5rem;
-  }
-
-  .sidenote::before {
-    content: attr(data-number) ". ";
-    font-size: 0.75rem;
-    color: #999;
-    font-weight: normal;
-  }
-
-  .sidenote.collapsible {
-    display: none;
-  }
-
-  .sidenote.active {
-    display: block;
-  }
-
-  @media (max-width: 900px) {
-    .sidenote {
-      display: none;
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-roman-line-figures.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
     }
 
-    #endnotes {
-      display: block;
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-display-italic-old-style-figures.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-bold-line-figures.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-semi-bold-old-style-figures.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'et-book', Georgia, serif;
+      font-size: 1.125rem;
+      background-color: #fdfcf9;
+      color: #111;
+      margin: 0;
+      padding: 4rem 1.5rem;
+      line-height: 1.6;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      font-variant: small-caps;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 2.5rem;
+    }
+
+    nav a {
+      margin-right: 1.2rem;
+      text-decoration: underline;
+      text-decoration-color: #bbb;
+      text-underline-offset: 3px;
+      color: #000;
+    }
+
+    header {
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    h2.subtitle {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15rem;
+      margin-bottom: 1.0rem;
+      color: #555;
+    }
+
+    .byline {
+      font-size: 1.3rem;
+      letter-spacing: 0.06em;
+      font-variant: small-caps;
+      color: #666;
+      margin-bottom: 2.2rem;
+      font-weight: 600;
+    }
+
+    .section-number {
+      text-align: center;
+      font-size: 1.1rem;
+      font-variant: small-caps;
+      color: #666;
+      margin-bottom: 2rem;
       margin-top: 3rem;
     }
 
-    .sidenote-number a {
-      pointer-events: auto;
+    p {
+      margin-bottom: 1.5rem;
+      text-align: left;
     }
-  }
 
-  #endnotes {
-    display: none;
-    margin-top: 3rem;
-  }
+    .raised::first-letter {
+      font-size: 2rem;
+      font-variant: small-caps;
+      line-height: 0.6;
+      vertical-align: baseline;
+      position: relative;
+      top: -0.3em;
+      padding-right: 0.1rem;
+      color: #222;
+    }
 
-  #endnotes h2 {
-    font-size: 1.25rem;
-    font-weight: normal;
-    color: #444;
-    font-variant: small-caps;
-    margin-bottom: 1rem;
-  }
+    .sidenote-number sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      position: relative;
+      top: -0.3em;
+      cursor: pointer;
+      font-weight: normal;
+    }
 
-  #endnotes p {
-    margin-bottom: 1rem;
-  }
+    .sidenote-number a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  #endnotes sup {
-    font-size: 0.75rem;
-    color: #999;
-    vertical-align: super;
-    font-weight: normal;
-  }
+    .sidenote {
+      float: right;
+      clear: right;
+      margin-right: -240px;
+      width: 220px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      position: relative;
+      color: #666;
+      margin-top: 1.5rem;
+    }
 
-  #endnotes a.return-link {
-    text-decoration: none;
-    font-size: 0.75rem;
-    margin-left: 0.4rem;
-    color: #999;
-  }
-</style>
+    .sidenote::before {
+      content: attr(data-number) ". ";
+      font-size: 0.75rem;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .sidenote.collapsible {
+      display: none;
+    }
+
+    .sidenote.active {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .sidenote {
+        display: none;
+      }
+
+      #endnotes {
+        display: block;
+        margin-top: 3rem;
+      }
+
+      .sidenote-number a {
+        pointer-events: auto;
+      }
+    }
+
+    #endnotes {
+      display: none;
+      margin-top: 3rem;
+    }
+
+    #endnotes h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: #444;
+      font-variant: small-caps;
+      margin-bottom: 1rem;
+    }
+
+    #endnotes p {
+      margin-bottom: 1rem;
+    }
+
+    #endnotes sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      font-weight: normal;
+    }
+
+    #endnotes a.return-link {
+      text-decoration: none;
+      font-size: 0.75rem;
+      margin-left: 0.4rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <!-- Content here -->
+
+ <nav>
+    <a href="#prologue">1. Prologue</a>
+    <a href="#genesis">2. Genesis</a>
+    <a href="#invocation">3. Invocation</a>
+    <a href="#foresight">4. Foresight</a>
+    <a href="#epilogue">5. Epilogue</a>
+  </nav>
+
+  <header>
+    <h1>The Age of Generation, the End of Thought</h1>
+    <h2 class="subtitle">A public essay in development</h2>
+    <div class="byline">Chindu Sreedharan</div>
+  </header>
+
+  <section id="prologue">
+    <div class="section-number">1.</div>
+
+    <p class="raised">Is the university merely a place? Was it ever, really?</p>
+
+    <p>
+      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
+      <span id="ref-1" class="sidenote-number"><a href="#endnote-1" onclick="toggleSidenote(1, event)"><sup>1</sup></a></span>
+      <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
+    </p>
+
+    <p>
+      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
+    </p>
+
+    <p>
+      Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
+    </p>
+
+    <p>
+      The performers summon their entire universe—bosses, colleagues, even the acquaintance who nodded at them in 2016. Thank you to my incredible team, they write. And the hashtags? They sprout faster than thought leader bios. The crowd obliges with predictable praise: So inspiring! What a legend!
+    </p>
+
+    <p>
+      And the performers? They bask, heads tilted just enough to feign surprise.
+    </p>
+
+    <p>
+      Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
+    </p>
+  </section>
+
+  <section id="endnotes">
+    <h2>Endnotes</h2>
+    <p id="endnote-1"><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile. <a href="#ref-1" class="return-link">↩</a></p>
+    <p id="endnote-2"><sup>2</sup> Recursion here does not mean repetition, but progressive transformation. <a href="#ref-2" class="return-link">↩</a></p>
+  </section>
+
+  <script>
+    function toggleSidenote(id, event) {
+      if (window.innerWidth > 900) {
+        const note = document.getElementById(`sidenote-${id}`);
+        note.classList.toggle('active');
+        if (event) event.preventDefault();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 900) {
+        document.getElementById('endnotes').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
