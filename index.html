@@ -98,6 +98,7 @@
       position: relative;
       top: -0.3em;
       cursor: pointer;
+      font-weight: normal;
     }
 
     .sidenote {
@@ -155,10 +156,17 @@
       margin-bottom: 1rem;
     }
 
-    #endnotes strong {
-      font-weight: bold;
-      color: #444;
-      font-size: 0.85rem;
+    #endnotes sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+    }
+
+    #endnotes a.return-link {
+      text-decoration: none;
+      font-size: 0.75rem;
+      margin-left: 0.4rem;
+      color: #999;
     }
   </style>
 </head>
@@ -183,8 +191,7 @@
     <p class="raised">Is the university merely a place? Was it ever, really?</p>
 
     <p>
-      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
+      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.<span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
       <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
     </p>
 
@@ -200,8 +207,8 @@
 
   <section id="endnotes">
     <h2>Endnotes</h2>
-    <p><strong>1.</strong> This is a sidenote. It sits to the right on large screens, and drops below on mobile.</p>
-    <p><strong>2.</strong> Recursion here does not mean repetition, but progressive transformation.</p>
+    <p><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile.<a href="#sidenote-1" class="return-link">↩</a></p>
+    <p><sup>2</sup> Recursion here does not mean repetition, but progressive transformation.<a href="#sidenote-2" class="return-link">↩</a></p>
   </section>
 
   <script>
