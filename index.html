@@ -99,6 +99,12 @@
       top: -0.3em;
       cursor: pointer;
       font-weight: normal;
+      text-decoration: none;
+    }
+
+    .sidenote-number a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .sidenote {
@@ -160,6 +166,7 @@
       font-size: 0.75rem;
       color: #999;
       vertical-align: super;
+      font-weight: normal;
     }
 
     #endnotes a.return-link {
@@ -225,11 +232,6 @@
   </section>
 
   <script>
-    function toggleSidenote(id) {
-      const note = document.getElementById(`sidenote-${id}`);
-      note.classList.toggle('active');
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 900) {
         document.getElementById('endnotes').style.display = 'block';
