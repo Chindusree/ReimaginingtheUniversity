@@ -143,6 +143,10 @@
         display: block;
         margin-top: 3rem;
       }
+
+      .sidenote-number a {
+        pointer-events: auto;
+      }
     }
 
     #endnotes {
@@ -199,12 +203,12 @@
 
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <span id="ref-1" class="sidenote-number"><a href="#endnote-1"><sup>1</sup></a></span>
+      <span id="ref-1" class="sidenote-number"><a href="#endnote-1" onclick="toggleSidenote(1); return false;"><sup>1</sup></a></span>
       <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
     </p>
 
     <p>
-      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2"><sup>2</sup></a></span>
+      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2); return false;"><sup>2</sup></a></span>
       <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
     </p>
 
@@ -232,6 +236,13 @@
   </section>
 
   <script>
+    function toggleSidenote(id) {
+      if (window.innerWidth > 900) {
+        const note = document.getElementById(`sidenote-${id}`);
+        note.classList.toggle('active');
+      }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 900) {
         document.getElementById('endnotes').style.display = 'block';
