@@ -92,6 +92,23 @@
       color: #222;
     }
 
+    /* --- Sidenotes --- */
+    label.sidenote-number {
+      cursor: pointer;
+    }
+
+    label.sidenote-number sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      position: relative;
+      top: -0.3em;
+    }
+
+    .margin-toggle {
+      display: none;
+    }
+
     .sidenote {
       float: right;
       clear: right;
@@ -103,14 +120,11 @@
       color: #666;
     }
 
-    .sidenote-ref {
-      text-decoration: none;
-      color: #999;
+    .sidenote-number + input.margin-toggle + .sidenote::before {
+      content: attr(data-number) ". ";
       font-size: 0.75rem;
-    }
-
-    .return-link {
-      display: none;
+      font-weight: bold;
+      color: #999;
     }
 
     @media (max-width: 900px) {
@@ -119,22 +133,27 @@
         display: block;
         margin: 1rem 0;
         width: 100%;
-        background-color: #f9f9f9;
-        padding: 0.5rem 1rem;
-        border-left: 3px solid #ccc;
-      }
-      .return-link {
-        display: inline;
-        font-size: 0.75rem;
-        color: #999;
-        text-decoration: none;
-        margin-left: 0.5rem;
       }
     }
+
+    /* --- Link Styling --- */
+    a {
+      color: #3c6e91;
+      text-decoration: underline;
+      text-decoration-color: #aab7c4;
+      text-underline-offset: 3px;
+    }
+
+    a:visited {
+      color: #6b4c5b;
+      text-decoration-color: #c9a3b6;
+    }
+
   </style>
 </head>
 
 <body>
+
   <nav>
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
@@ -156,14 +175,15 @@
 
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
-      <span id="ref1"><sup><a href="#sn1" class="sidenote-ref">1</a></sup></span>
-      <span class="sidenote" id="sn1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.<a href="#ref1" class="return-link">↩</a></span> 
+      <label for="sn1" class="sidenote-number"><sup>1</sup></label><input type="checkbox" id="sn1" class="margin-toggle" />
+      <span class="sidenote" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below the paragraph on small screens.</span> We need more text to make this work. Hence, I am adding more text.
+    </p>
 
-    <p>
-      Writing is a recursive gesture.<span id="ref2"><sup><a href="#sn2" class="sidenote-ref">2</a></sup></span>
-      <span class="sidenote" id="sn2">Recursion here does not mean repetition, but progressive transformation.<a href="#ref2" class="return-link">↩</a></span> I am adding more content to test this out. We need more text.
-    </p>
-    </p>
+<p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent circling an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to <a href=“www.bournemouth.ac.uk”>understand</a> that confusion was not the opposite of clarity. It was its condition. The university offered a way to move toward knowledge. It gave you the courage, the certainty—the epistemological confidence—that if you stayed with uncertainty long enough, something coherent would emerge. Confusion, then, was not a failure of thinking, but its method.
+</p>
+
   </section>
+
 </body>
 </html>
+
