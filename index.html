@@ -191,24 +191,37 @@
     <p class="raised">Is the university merely a place? Was it ever, really?</p>
 
     <p>
-      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.<span class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
+      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.
+      <span id="ref-1" class="sidenote-number"><sup onclick="toggleSidenote(1)">1</sup></span>
       <span id="sidenote-1" class="sidenote collapsible" data-number="1">This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
     </p>
 
     <p>
-      Writing is a recursive gesture.<span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
-      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span> Shall we add more text? This is getting boring and time consuming. And this is very important.
+      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span>
     </p>
 
     <p>
       Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
     </p>
+
+    <p>
+      The performers summon their entire universe—bosses, colleagues, even the acquaintance who nodded at them in 2016. Thank you to my incredible team, they write. And the hashtags? They sprout faster than thought leader bios. The crowd obliges with predictable praise: So inspiring! What a legend!
+    </p>
+
+    <p>
+      And the performers? They bask, heads tilted just enough to feign surprise.
+    </p>
+
+    <p>
+      Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
+    </p>
   </section>
 
   <section id="endnotes">
     <h2>Endnotes</h2>
-    <p><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile.<a href="#sidenote-1" class="return-link">↩</a></p>
-    <p><sup>2</sup> Recursion here does not mean repetition, but progressive transformation.<a href="#sidenote-2" class="return-link">↩</a></p>
+    <p><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile.<a href="#ref-1" class="return-link">↩</a></p>
+    <p><sup>2</sup> Recursion here does not mean repetition, but progressive transformation.<a href="#ref-2" class="return-link">↩</a></p>
   </section>
 
   <script>
@@ -217,7 +230,6 @@
       note.classList.toggle('active');
     }
 
-    // Show endnotes only on mobile
     window.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 900) {
         document.getElementById('endnotes').style.display = 'block';
