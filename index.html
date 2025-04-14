@@ -91,7 +91,6 @@
       color: #222;
     }
 
-    /* --- Sidenotes --- */
     .sidenote-number sup {
       font-size: 0.75rem;
       color: #999;
@@ -128,33 +127,20 @@
       display: block;
     }
 
-    .toggle-button {
-      display: inline-block;
-      background: #eee;
-      border: none;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.85rem;
-      margin: 2rem 0 1rem;
-      cursor: pointer;
-      font-family: 'et-book', Georgia, serif;
-    }
-
     @media (max-width: 900px) {
       .sidenote {
-        float: none;
+        display: none;
+      }
+
+      #endnotes {
         display: block;
-        margin: 1rem 0;
-        width: 100%;
+        margin-top: 3rem;
       }
     }
 
-    /* --- Endnotes --- */
     #endnotes {
-      margin-top: 3rem;
-    }
-
-    #endnotes.hidden {
       display: none;
+      margin-top: 3rem;
     }
 
     #endnotes h2 {
@@ -203,18 +189,19 @@
     </p>
 
     <p>
-      Writing is a recursive gesture.
-      <span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
-      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span> Shall we add more text? This is getting borimg and time consuming. And this is very important.
+      Writing is a recursive gesture.<span class="sidenote-number"><sup onclick="toggleSidenote(2)">2</sup></span>
+      <span id="sidenote-2" class="sidenote collapsible" data-number="2">Recursion here does not mean repetition, but progressive transformation.</span> Shall we add more text? This is getting boring and time consuming. And this is very important.
     </p>
 
-    <button class="toggle-button" onclick="toggleEndnotes()">Toggle Endnotes</button>
+    <p>
+      Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
+    </p>
   </section>
 
-  <section id="endnotes" class="hidden">
+  <section id="endnotes">
     <h2>Endnotes</h2>
-    <p><strong>1.</strong> This is a formal citation note linked to the first sidenote.</p>
-    <p><strong>2.</strong> This footnote expands on recursion as a philosophical principle.</p>
+    <p><strong>1.</strong> This is a sidenote. It sits to the right on large screens, and drops below on mobile.</p>
+    <p><strong>2.</strong> Recursion here does not mean repetition, but progressive transformation.</p>
   </section>
 
   <script>
@@ -223,9 +210,12 @@
       note.classList.toggle('active');
     }
 
-    function toggleEndnotes() {
-      document.getElementById('endnotes').classList.toggle('hidden');
-    }
+    // Show endnotes only on mobile
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth <= 900) {
+        document.getElementById('endnotes').style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
