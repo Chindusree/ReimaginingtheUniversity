@@ -5,28 +5,24 @@
   <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* === Fonts === */
     @font-face {
       font-family: 'et-book';
       src: url('fonts/et-book-roman-line-figures.woff') format('woff');
       font-weight: 400;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'et-book';
       src: url('fonts/et-book-display-italic-old-style-figures.woff') format('woff');
       font-weight: 400;
       font-style: italic;
     }
-
     @font-face {
       font-family: 'et-book';
       src: url('fonts/et-book-bold-line-figures.woff') format('woff');
       font-weight: 700;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'et-book';
       src: url('fonts/et-book-semi-bold-old-style-figures.woff') format('woff');
@@ -75,61 +71,50 @@
       text-decoration-color: #999;
     }
 
-    /* === Typography === */
-    header {
-      margin-bottom: 3rem;
-      text-align: left;
-    }
-
-    h1 {
-      font-size: 2.1rem;
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-    }
-
-    h2.subtitle {
-      font-style: italic;
-      font-weight: 400;
-      font-size: 1.15rem;
-      margin-bottom: 1.0rem;
+    /* === Responsive mobile menu toggle === */
+    .mobile-nav-toggle {
+      display: none;
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 20;
+      background: none;
+      border: none;
+      font-family: 'et-book', Georgia, serif;
+      font-size: 1rem;
+      font-variant: small-caps;
       color: #555;
+      cursor: pointer;
     }
 
-    .byline {
-      font-size: 1.3rem;
-      letter-spacing: 0.06em;
-      font-variant: small-caps;
-      color: #666;
-      margin-bottom: 2.2rem;
-      font-weight: 600;
+    @media (max-width: 900px) {
+      nav.side-nav {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      nav.side-nav.mobile {
+        display: none;
+        position: fixed;
+        top: 3.5rem;
+        left: 1.5rem;
+        background-color: #fdfcf9;
+        padding: 1rem 0;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        z-index: 15;
+      }
+
+      nav.side-nav.mobile.active {
+        display: flex;
+      }
     }
 
-    .section-number {
-      text-align: center;
-      font-size: 1.1rem;
-      font-variant: small-caps;
-      color: #666;
-      margin-bottom: 2rem;
-      margin-top: 3rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      text-align: left;
-    }
-
-    .raised::first-letter {
-      font-size: 2rem;
-      font-variant: small-caps;
-      line-height: 0.6;
-      vertical-align: baseline;
-      position: relative;
-      top: -0.3em;
-      padding-right: 0.1rem;
-      color: #222;
-    }
-
-    /* === Hyperlinks in body copy === */
+    /* Link styling within paragraphs */
     p a {
       text-decoration: underline;
       text-decoration-color: #999;
@@ -146,114 +131,43 @@
     p a:visited {
       color: #333;
     }
-
-    /* === Sidenotes === */
-    .sidenote-number sup {
-      font-size: 0.75rem;
-      color: #999;
-      vertical-align: super;
-      position: relative;
-      top: -0.3em;
-      cursor: pointer;
-      font-weight: normal;
-    }
-
-    .sidenote-number a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .sidenote {
-      float: right;
-      clear: right;
-      margin-right: -240px;
-      width: 220px;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      position: relative;
-      color: #666;
-      margin-top: 1.5rem;
-    }
-
-    .sidenote::before {
-      content: attr(data-number) ". ";
-      font-size: 0.75rem;
-      color: #999;
-      font-weight: normal;
-    }
-
-    .sidenote.collapsible {
-      display: none;
-    }
-
-    .sidenote.active {
-      display: block;
-    }
-
-    /* === Responsive adjustments === */
-    @media (max-width: 900px) {
-  .side-nav {
-    display: none !important;
-    visibility: hidden;
-    position: absolute;
-    left: -9999px;
-  }
-
-  .sidenote {
-    display: none;
-  }
-
-  #endnotes {
-    display: block;
-    margin-top: 3rem;
-  }
-
-  .sidenote-number a {
-    pointer-events: auto;
-  }
-}
-    /* === Endnotes === */
-    #endnotes {
-      display: none;
-      margin-top: 3rem;
-    }
-
-    #endnotes h2 {
-      font-size: 1.25rem;
-      font-weight: normal;
-      color: #444;
-      font-variant: small-caps;
-      margin-bottom: 1rem;
-    }
-
-    #endnotes p {
-      margin-bottom: 1rem;
-    }
-
-    #endnotes sup {
-      font-size: 0.75rem;
-      color: #999;
-      vertical-align: super;
-      font-weight: normal;
-    }
-
-    #endnotes a.return-link {
-      text-decoration: none;
-      font-size: 0.75rem;
-      margin-left: 0.4rem;
-      color: #999;
-    }
   </style>
 </head>
 <body>
-  <!-- Side Navigation (Desktop only) -->
-  <nav class="side-nav" aria-label="Section Navigation">
+
+  <button class="mobile-nav-toggle" onclick="toggleMobileNav()">Menu</button>
+
+  <nav class="side-nav mobile" id="mobileNav">
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
     <a href="#invocation">3. Invocation</a>
     <a href="#foresight">4. Foresight</a>
     <a href="#epilogue">5. Epilogue</a>
   </nav>
+
+  <nav class="side-nav desktop">
+    <a href="#prologue">1. Prologue</a>
+    <a href="#genesis">2. Genesis</a>
+    <a href="#invocation">3. Invocation</a>
+    <a href="#foresight">4. Foresight</a>
+    <a href="#epilogue">5. Epilogue</a>
+  </nav>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('#mobileNav a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').classList.remove('active');
+        });
+      });
+    });
+  </script>
   
 
   <header>
