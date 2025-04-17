@@ -43,7 +43,6 @@
       margin-right: auto;
     }
 
-    /* === Desktop Nav === */
     nav.side-nav.desktop {
       position: fixed;
       top: 4rem;
@@ -71,7 +70,6 @@
       text-decoration-color: #999;
     }
 
-    /* === Mobile Nav Toggle === */
     .mobile-nav-toggle {
       display: none;
       position: fixed;
@@ -87,7 +85,6 @@
       line-height: 1;
     }
 
-    /* === Mobile Nav === */
     nav.side-nav.mobile {
       display: none;
       position: fixed;
@@ -130,7 +127,6 @@
       }
     }
 
-    /* === Section Numbers === */
     .section-number {
       text-align: center;
       font-size: 1.1rem;
@@ -140,7 +136,6 @@
       margin-top: 4rem;
     }
 
-    /* === Inline Link Styling === */
     p a {
       text-decoration: underline;
       text-decoration-color: #999;
@@ -158,7 +153,6 @@
       color: #333;
     }
 
-    /* === Sidenote Superscripts === */
     .sidenote-number a {
       text-decoration: none;
       color: inherit;
@@ -201,7 +195,6 @@
       display: block;
     }
 
-    /* === Endnotes (Mobile Only) === */
     #endnotes {
       display: none;
       margin-top: 3rem;
@@ -226,27 +219,23 @@
       font-weight: normal;
     }
 
-#endnotes a.return-link {
-  text-decoration: none;
-  font-size: 0.85rem;
-  margin-left: 0.4rem;
-  color: #111;
-  font-family: 'et-book', Georgia, serif;
-  vertical-align: baseline;
-  line-height: 1;
-}
-
-
+    #endnotes a.return-link {
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 0.4rem;
+      color: #111;
+      font-family: 'et-book', Georgia, serif;
+      vertical-align: baseline;
+      line-height: 1;
+    }
 
     @media (max-width: 900px) {
       .sidenote {
         display: none;
       }
-
       #endnotes {
         display: block;
       }
-
       .sidenote-number a {
         pointer-events: auto;
       }
@@ -277,14 +266,12 @@
     });
   </script>
 </head>
-<body>
 
-  <!-- Mobile nav toggle button -->
+<body>
   <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
     &#9776;
   </button>
 
-  <!-- Mobile nav -->
   <nav class="side-nav mobile" id="mobileNav">
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
@@ -293,7 +280,6 @@
     <a href="#epilogue">5. Epilogue</a>
   </nav>
 
-  <!-- Desktop nav -->
   <nav class="side-nav desktop">
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
@@ -301,8 +287,6 @@
     <a href="#foresight">4. Foresight</a>
     <a href="#epilogue">5. Epilogue</a>
   </nav>
-
-  
 
   <header>
     <h1>The Age of Generation, the End of Thought</h1>
@@ -321,49 +305,22 @@
     </p>
 
     <p>
-      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span><span id="sidenote-2" class="sidenote collapsible" data-number="2"> Recursion here does not mean repetition, but progressive transformation.</span> Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
-    </p>
-
-    <p>
-      The performers <a href="https://www.chindu.co.uk">summon</a> a their entire universe—bosses, colleagues, even the acquaintance who nodded at them in 2016. Thank you to my incredible team, they write. And the hashtags? They sprout faster than thought leader bios. The crowd obliges with predictable praise: So inspiring! What a legend!
-    </p>
-
-    <p>
-      And the <a href="https://www.bbc.com">performers</a> They bask, heads tilted just enough to feign surprise. Yes.
-    </p>
-
-    <p>
-      Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
+      Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span><span id="sidenote-2" class="sidenote collapsible" data-number="2"> Recursion here does not mean repetition, but progressive transformation.</span>
     </p>
   </section>
 
   <section id="endnotes">
     <h2>Endnotes</h2>
-  <a href="#ref-1" class="return-link">↩</a>
+
     <p id="endnote-1">
-  <sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile.
-  <a href="#ref-1" class="return-link">↩</a>
-</p>
-<sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile. <a href="#ref-1" class="return-link">↩</a>
-</p>
-    <p id="endnote-2"><sup>2</sup> Recursion here does not mean repetition, but progressive transformation. <a href="#ref-1" class="return-link">↩</a>
-</p>
+      <sup>1</sup> This is a sidenote. Yes. It sits to the right on large screens, and drops below on mobile.
+      <a href="#ref-1" class="return-link">↩</a>
+    </p>
+
+    <p id="endnote-2">
+      <sup>2</sup> Recursion here does not mean repetition, but progressive transformation.
+      <a href="#ref-2" class="return-link">↩</a>
+    </p>
   </section>
-
-  <script>
-    function toggleSidenote(id, event) {
-      if (window.innerWidth > 900) {
-        const note = document.getElementById(`sidenote-${id}`);
-        note.classList.toggle('active');
-        if (event) event.preventDefault();
-      }
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth <= 900) {
-        document.getElementById('endnotes').style.display = 'block';
-      }
-    });
-  </script>
 </body>
 </html>
