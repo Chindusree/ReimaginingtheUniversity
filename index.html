@@ -192,24 +192,26 @@
 
     /* === Responsive adjustments === */
     @media (max-width: 900px) {
-      .side-nav {
-        display: none;
-      }
+  .side-nav {
+    display: none !important;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+  }
 
-      .sidenote {
-        display: none;
-      }
+  .sidenote {
+    display: none;
+  }
 
-      #endnotes {
-        display: block;
-        margin-top: 3rem;
-      }
+  #endnotes {
+    display: block;
+    margin-top: 3rem;
+  }
 
-      .sidenote-number a {
-        pointer-events: auto;
-      }
-    }
-
+  .sidenote-number a {
+    pointer-events: auto;
+  }
+}
     /* === Endnotes === */
     #endnotes {
       display: none;
