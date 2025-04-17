@@ -5,6 +5,7 @@
   <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* === Fonts === */
     @font-face {
       font-family: 'et-book';
       src: url('fonts/et-book-roman-line-figures.woff') format('woff');
@@ -46,21 +47,35 @@
       margin-right: auto;
     }
 
-    nav {
+    /* === Fixed vertical nav for desktop === */
+    nav.side-nav {
+      position: fixed;
+      top: 4rem;
+      left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
       font-variant: small-caps;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: #444;
+      z-index: 10;
     }
 
-    nav a {
-      margin-right: 1.2rem;
+    nav.side-nav a {
+      color: #444;
       text-decoration: underline;
-      text-decoration-color: #bbb;
+      text-decoration-color: #ddd;
       text-underline-offset: 3px;
-      color: #000;
+      transition: color 0.2s ease;
     }
 
+    nav.side-nav a:hover {
+      color: #000;
+      text-decoration-color: #999;
+    }
+
+    /* === Typography === */
     header {
       margin-bottom: 3rem;
       text-align: left;
@@ -103,23 +118,6 @@
       text-align: left;
     }
 
-    p a {
-  text-decoration: underline;
-  text-decoration-color: #999;
-  text-underline-offset: 3px;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-p a:hover {
-  text-decoration-color: #555;
-  color: #000;
-}
-    p a:visited {
-  color: #333;
-}
-
-
     .raised::first-letter {
       font-size: 2rem;
       font-variant: small-caps;
@@ -131,6 +129,25 @@ p a:hover {
       color: #222;
     }
 
+    /* === Hyperlinks in body copy === */
+    p a {
+      text-decoration: underline;
+      text-decoration-color: #999;
+      text-underline-offset: 3px;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+
+    p a:hover {
+      text-decoration-color: #555;
+      color: #000;
+    }
+
+    p a:visited {
+      color: #333;
+    }
+
+    /* === Sidenotes === */
     .sidenote-number sup {
       font-size: 0.75rem;
       color: #999;
@@ -173,7 +190,12 @@ p a:hover {
       display: block;
     }
 
+    /* === Responsive adjustments === */
     @media (max-width: 900px) {
+      .side-nav {
+        display: none;
+      }
+
       .sidenote {
         display: none;
       }
@@ -188,6 +210,7 @@ p a:hover {
       }
     }
 
+    /* === Endnotes === */
     #endnotes {
       display: none;
       margin-top: 3rem;
@@ -221,15 +244,15 @@ p a:hover {
   </style>
 </head>
 <body>
-  <!-- Content here -->
-
- <nav>
+  <!-- Side Navigation (Desktop only) -->
+  <nav class="side-nav" aria-label="Section Navigation">
     <a href="#prologue">1. Prologue</a>
     <a href="#genesis">2. Genesis</a>
     <a href="#invocation">3. Invocation</a>
     <a href="#foresight">4. Foresight</a>
     <a href="#epilogue">5. Epilogue</a>
   </nav>
+  
 
   <header>
     <h1>The Age of Generation, the End of Thought</h1>
