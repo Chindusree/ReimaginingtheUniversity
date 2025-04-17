@@ -4,239 +4,262 @@
   <meta charset="UTF-8">
   <title>The Age of Generation, the End of Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <style>
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-roman-line-figures.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-display-italic-old-style-figures.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-bold-line-figures.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'et-book';
-    src: url('fonts/et-book-semi-bold-old-style-figures.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  body {
-    font-family: 'et-book', Georgia, serif;
-    font-size: 1.125rem;
-    background-color: #fdfcf9;
-    color: #111;
-    margin: 0;
-    padding: 4rem 1.5rem;
-    line-height: 1.6;
-    max-width: 660px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* === DESKTOP nav === */
-  nav.side-nav.desktop {
-    position: fixed;
-    top: 4rem;
-    left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    font-variant: small-caps;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    color: #444;
-    z-index: 10;
-  }
-
-  nav.side-nav.desktop a {
-    color: #444;
-    text-decoration: underline;
-    text-decoration-color: #ddd;
-    text-underline-offset: 3px;
-    transition: color 0.2s ease;
-  }
-
-  nav.side-nav.desktop a:hover {
-    color: #000;
-    text-decoration-color: #999;
-  }
-
-  /* === MOBILE menu toggle === */
-  .mobile-nav-toggle {
-    display: none;
-    position: fixed;
-    top: 1.25rem;
-    right: 1.5rem;
-    z-index: 20;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #777;
-    cursor: pointer;
-    padding: 0.25rem;
-    line-height: 1;
-  }
-
-  /* === MOBILE nav === */
-  nav.side-nav.mobile {
-    display: none;
-    position: fixed;
-    top: 3.5rem;
-    right: 1.5rem;
-    background-color: #fdfcf9;
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    z-index: 15;
-    font-variant: small-caps;
-    font-size: 0.9rem;
-    letter-spacing: 0.03em;
-  }
-
-  nav.side-nav.mobile a {
-    color: #444;
-    text-decoration: underline;
-    text-decoration-color: #ddd;
-    text-underline-offset: 3px;
-    transition: color 0.2s ease;
-  }
-
-  nav.side-nav.mobile a:hover {
-    color: #000;
-    text-decoration-color: #999;
-  }
-
-  nav.side-nav.mobile.active {
-    display: flex;
-  }
-
-  @media (max-width: 900px) {
-    .mobile-nav-toggle {
-      display: block;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Age of Generation, the End of Thought</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-roman-line-figures.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-display-italic-old-style-figures.woff') format('woff');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-bold-line-figures.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'et-book';
+      src: url('fonts/et-book-semi-bold-old-style-figures.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
     }
 
+    body {
+      font-family: 'et-book', Georgia, serif;
+      font-size: 1.125rem;
+      background-color: #fdfcf9;
+      color: #111;
+      margin: 0;
+      padding: 4rem 1.5rem;
+      line-height: 1.6;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* === Desktop nav === */
     nav.side-nav.desktop {
+      position: fixed;
+      top: 4rem;
+      left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      font-variant: small-caps;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: #444;
+      z-index: 10;
+    }
+
+    nav.side-nav.desktop a {
+      color: #444;
+      text-decoration: underline;
+      text-decoration-color: #ddd;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    nav.side-nav.desktop a:hover {
+      color: #000;
+      text-decoration-color: #999;
+    }
+
+    /* === Mobile nav toggle === */
+    .mobile-nav-toggle {
       display: none;
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      z-index: 20;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #777;
+      cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
     }
-  }
 
-  /* === Inline link styling === */
-  p a {
-    text-decoration: underline;
-    text-decoration-color: #999;
-    text-underline-offset: 3px;
-    color: #333;
-    transition: color 0.2s ease;
-  }
-
-  p a:hover {
-    text-decoration-color: #555;
-    color: #000;
-  }
-
-  p a:visited {
-    color: #333;
-  }
-
-  /* === SIDENOTE styling fix === */
-  .sidenote-number a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
-
-  .sidenote-number sup {
-    font-size: 0.75rem;
-    color: #999;
-    vertical-align: super;
-    position: relative;
-    top: -0.3em;
-    font-weight: normal;
-  }
-
-  .sidenote {
-    float: right;
-    clear: right;
-    margin-right: -240px;
-    width: 220px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    position: relative;
-    color: #666;
-    margin-top: 1.5rem;
-  }
-
-  .sidenote::before {
-    content: attr(data-number) ". ";
-    font-size: 0.75rem;
-    color: #999;
-    font-weight: normal;
-  }
-
-  .sidenote.collapsible {
-    display: none;
-  }
-
-  .sidenote.active {
-    display: block;
-  }
-
-  @media (max-width: 900px) {
-    .sidenote {
+    /* === Mobile nav === */
+    nav.side-nav.mobile {
       display: none;
+      position: fixed;
+      top: 3.5rem;
+      right: 1.5rem;
+      background-color: #fdfcf9;
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 15;
+      font-variant: small-caps;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
     }
 
-    #endnotes {
-      display: block;
-      margin-top: 3rem;
+    nav.side-nav.mobile a {
+      color: #444;
+      text-decoration: underline;
+      text-decoration-color: #ddd;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
     }
 
+    nav.side-nav.mobile a:hover {
+      color: #000;
+      text-decoration-color: #999;
+    }
+
+    nav.side-nav.mobile.active {
+      display: flex;
+    }
+
+    /* === Responsive toggle === */
+    @media (max-width: 900px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+      nav.side-nav.desktop {
+        display: none;
+      }
+    }
+
+    /* === Inline links === */
+    p a {
+      text-decoration: underline;
+      text-decoration-color: #999;
+      text-underline-offset: 3px;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+
+    p a:hover {
+      text-decoration-color: #555;
+      color: #000;
+    }
+
+    p a:visited {
+      color: #333;
+    }
+
+    /* === Section numbers === */
+    .section-number {
+      text-align: center;
+      font-size: 1.1rem;
+      font-variant: small-caps;
+      color: #666;
+      margin-bottom: 2rem;
+      margin-top: 4rem;
+    }
+
+    /* === Sidenotes === */
     .sidenote-number a {
-      pointer-events: auto;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
-  }
-</style>
 
-<script>
-  function toggleMobileNav() {
-    const nav = document.getElementById('mobileNav');
-    nav.classList.toggle('active');
-  }
-
-  function toggleSidenote(id, event) {
-    if (window.innerWidth > 900) {
-      const note = document.getElementById(`sidenote-${id}`);
-      note.classList.toggle('active');
-      if (event) event.preventDefault();
+    .sidenote-number sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      position: relative;
+      top: -0.3em;
+      font-weight: normal;
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('#mobileNav a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobileNav').classList.remove('active');
+    .sidenote {
+      float: right;
+      clear: right;
+      margin-right: -240px;
+      width: 220px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      position: relative;
+      color: #666;
+      margin-top: 1.5rem;
+    }
+
+    .sidenote::before {
+      content: attr(data-number) ". ";
+      font-size: 0.75rem;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .sidenote.collapsible {
+      display: none;
+    }
+
+    .sidenote.active {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .sidenote {
+        display: none;
+      }
+
+      #endnotes {
+        display: block;
+        margin-top: 3rem;
+      }
+
+      .sidenote-number a {
+        pointer-events: auto;
+      }
+    }
+
+    /* === Return link (↩) in endnotes === */
+    #endnotes a.return-link {
+      text-decoration: none;
+      font-size: 0.75rem;
+      margin-left: 0.4rem;
+      color: #aaa;
+      vertical-align: baseline;
+    }
+  </style>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+    }
+
+    function toggleSidenote(id, event) {
+      if (window.innerWidth > 900) {
+        const note = document.getElementById(`sidenote-${id}`);
+        note.classList.toggle('active');
+        if (event) event.preventDefault();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('#mobileNav a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').classList.remove('active');
+        });
       });
     });
-
-    // Optional: open sidenotes manually on load if desired
-  });
-</script>
+  </script>
 </head>
 <body>
 
-  <!-- Mobile toggle -->
+  <!-- Mobile nav toggle button -->
   <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
     &#9776;
   </button>
@@ -296,8 +319,10 @@
 
   <section id="endnotes">
     <h2>Endnotes</h2>
-    <p id="endnote-1"><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile. <a href="#ref-1" class="return-link">↩</a></p>
-    <p id="endnote-2"><sup>2</sup> Recursion here does not mean repetition, but progressive transformation. <a href="#ref-2" class="return-link">↩</a></p>
+    <p id="endnote-1"><sup>1</sup> This is a sidenote. It sits to the right on large screens, and drops below on mobile. <a href="#ref-1" class="return-link" aria-label="Return to text">←</a>
+</p>
+    <p id="endnote-2"><sup>2</sup> Recursion here does not mean repetition, but progressive transformation. <a href="#ref-1" class="return-link" aria-label="Return to text">←</a>
+</p>
   </section>
 
   <script>
