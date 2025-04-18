@@ -43,14 +43,6 @@
       margin-right: auto;
     }
 
-    .byline {
-      font-size: 1.3rem;
-      letter-spacing: 0.06em;
-      font-variant: small-caps;
-      color: #444;
-      margin-bottom: 2.2rem;
-    }
-
     nav.side-nav.desktop {
       position: fixed;
       top: 4rem;
@@ -81,17 +73,18 @@
     .mobile-nav-toggle {
       background: none;
       border: none;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #444;
       cursor: pointer;
       padding: 0.2rem;
       line-height: 1;
-      display: flex;
-      align-items: center;
     }
 
     nav.side-nav.mobile {
       display: none;
       position: fixed;
-      top: 2.5rem;
+      top: 2.75rem;
       right: 1.5rem;
       background-color: #fdfcf9;
       padding: 1rem;
@@ -102,93 +95,207 @@
       font-variant: small-caps;
       font-size: 0.9rem;
       letter-spacing: 0.03em;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    }
+
+    nav.side-nav.mobile a {
+      color: #444;
+      text-decoration: underline;
+      text-decoration-color: #ddd;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    nav.side-nav.mobile a:hover {
+      color: #000;
+      text-decoration-color: #999;
     }
 
     nav.side-nav.mobile.active {
       display: flex;
-      opacity: 1;
-    }
-
-    .mobile-top-bar {
-      display: none;
-    }
-
-    .progress-bar {
-      display: none;
     }
 
     @media (max-width: 900px) {
       nav.side-nav.desktop {
         display: none;
       }
+    }
+
+    .section-number {
+      text-align: center;
+      font-size: 1.1rem;
+      font-variant: small-caps;
+      color: #666;
+      margin-bottom: 2rem;
+      margin-top: 4rem;
+    }
+
+    p a {
+      text-decoration: underline;
+      text-decoration-color: #999;
+      text-underline-offset: 3px;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+
+    p a:hover {
+      text-decoration-color: #555;
+      color: #000;
+    }
+
+    p a:visited {
+      color: #333;
+    }
+
+    .sidenote-number a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .sidenote-number sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      position: relative;
+      top: -0.3em;
+      font-weight: normal;
+    }
+
+    .sidenote {
+      float: right;
+      clear: right;
+      margin-right: -240px;
+      width: 220px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      position: relative;
+      color: #666;
+      margin-top: 1.5rem;
+    }
+
+    .sidenote::before {
+      content: attr(data-number) ". ";
+      font-size: 0.75rem;
+      color: #999;
+      font-weight: normal;
+    }
+
+    .sidenote.collapsible {
+      display: none;
+    }
+
+    .sidenote.active {
+      display: block;
+    }
+
+    #endnotes {
+      display: none;
+      margin-top: 3rem;
+    }
+
+    #endnotes h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: #444;
+      font-variant: small-caps;
+      margin-bottom: 1rem;
+    }
+
+    #endnotes p {
+      margin-bottom: 1rem;
+    }
+
+    #endnotes sup {
+      font-size: 0.75rem;
+      color: #999;
+      vertical-align: super;
+      font-weight: normal;
+    }
+
+    #endnotes a.return-link {
+      text-decoration: none;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      color: #666;
+      font-size: 0.8rem;
+      margin-left: 0.4rem;
+      transition: background-color 0.2s ease;
+    }
+
+    #endnotes a.return-link:hover {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    @media (max-width: 900px) {
+      .sidenote {
+        display: none;
+      }
+
+      #endnotes {
+        display: block;
+      }
+
+      .sidenote-number a {
+        pointer-events: auto;
+      }
 
       .mobile-top-bar {
-        display: flex;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        height: 2.5rem;
+        height: 2.75rem;
         background-color: #fdfcf9;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
         z-index: 1000;
+        display: flex;
         align-items: center;
         justify-content: flex-end;
         padding: 0 0.75rem;
         font-family: 'et-book', Georgia, serif;
-        gap: 0.75rem;
-      }
-
-      .mobile-nav-toggle svg {
-        display: block;
-      }
-
-      .progress-bar {
-        display: block;
-        position: fixed;
-        top: 2.5rem;
-        left: 0;
-        height: 2px;
-        background: #999;
-        z-index: 999;
       }
 
       body {
-        padding-top: 3.25rem;
+        padding-top: 3.75rem;
       }
     }
   </style>
+
   <script>
     function toggleMobileNav() {
       const nav = document.getElementById('mobileNav');
       nav.classList.toggle('active');
     }
 
-    function updateProgressBar() {
-      const bar = document.getElementById('progressBar');
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      bar.style.width = scrollPercent + '%';
+    function toggleSidenote(id, event) {
+      if (window.innerWidth > 900) {
+        const note = document.getElementById(`sidenote-${id}`);
+        note.classList.toggle('active');
+        if (event) event.preventDefault();
+      }
     }
 
-    window.addEventListener('scroll', updateProgressBar);
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('#mobileNav a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').classList.remove('active');
+        });
+      });
+    });
   </script>
 </head>
+
 <body>
   <div class="mobile-top-bar">
-    <div class="share-icon" style="font-size: 1.05rem; color: #444; transform: rotate(45deg);">&#x2197;</div>
-    <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
-      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect y="0" width="20" height="2" rx="1" fill="#444"/>
-        <rect y="6" width="20" height="2" rx="1" fill="#444"/>
-        <rect y="12" width="20" height="2" rx="1" fill="#444"/>
-      </svg>
-    </button>
+    <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">≡</button>
   </div>
-  <div id="progressBar" class="progress-bar"></div>
 
   <nav class="side-nav mobile" id="mobileNav">
     <a href="#prologue">1. Prologue</a>
@@ -212,12 +319,38 @@
     <div class="byline">Chindu Sreedharan</div>
   </header>
 
-  <main>
-    <section id="prologue">
-      <div class="section-number">1.</div>
-      <p class="raised">Is the university merely a place? Was it ever, really?</p>
-      <p>Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="#">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.</p>
-    </section>
-  </main>
+  <section id="prologue">
+    <div class="section-number">1.</div>
+
+    <p class="raised">Is the university merely a place? Was it ever, really?</p>
+
+    <p>
+      Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="https://www.bournemouth.ac.uk/">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.<span id="ref-1" class="sidenote-number"><a href="#endnote-1" onclick="toggleSidenote(1, event)"><sup>1</sup></a></span>
+      <span id="sidenote-1" class="sidenote collapsible" data-number="1"> This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
+    </p>
+
+    <p>Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span><span id="sidenote-2" class="sidenote collapsible" data-number="2"> Recursion here does not mean repetition, but progressive transformation.</span> Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
+    </p>
+
+    <p>The performers summon their entire universe—bosses, colleagues, even the acquaintance who nodded at them in 2016. Thank you to my incredible team, they write. And the hashtags? They sprout faster than thought leader bios. The crowd obliges with predictable praise: So inspiring! What a legend!
+    </p>
+
+    <p>And the performers? They bask, heads tilted just enough to feign surprise. Yes.</p>
+
+    <p>Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
+    </p>
+  </section>
+
+  <section id="endnotes">
+    <h2>Endnotes</h2>
+    <p id="endnote-1">
+      <sup>1</sup> This is a sidenote. Yes. It sits to the right on large screens, and drops below on mobile.
+      <a href="#ref-1" class="return-link">↩</a>
+    </p>
+    <p id="endnote-2">
+      <sup>2</sup> Recursion here does not mean repetition, but progressive transformation.
+      <a href="#ref-2" class="return-link">↩</a>
+    </p>
+  </section>
 </body>
 </html>
