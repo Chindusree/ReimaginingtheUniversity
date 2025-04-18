@@ -36,7 +36,7 @@
       background-color: #fdfcf9;
       color: #111;
       margin: 0;
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem 4rem;
       line-height: 1.6;
       max-width: 660px;
       margin-left: auto;
@@ -73,13 +73,13 @@
     .mobile-nav-toggle {
       display: none;
       position: fixed;
-      top: 1.25rem;
-      right: 1.5rem;
-      z-index: 20;
+      top: 1rem;
+      right: 1.25rem;
+      z-index: 999;
       background: none;
       border: none;
-      font-size: 1.5rem;
-      color: #777;
+      font-size: 1.6rem;
+      color: #444;
       cursor: pointer;
       padding: 0.25rem;
       line-height: 1;
@@ -95,7 +95,7 @@
       flex-direction: column;
       gap: 1rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      z-index: 15;
+      z-index: 998;
       font-variant: small-caps;
       font-size: 0.9rem;
       letter-spacing: 0.03em;
@@ -220,25 +220,24 @@
     }
 
     #endnotes a.return-link {
-    text-decoration: none;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    color: #666;
-    font-size: 0.8rem;
-    margin-left: 0.4rem;
-    transition: background-color 0.2s ease;
-}
+      text-decoration: none;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      color: #666;
+      font-size: 0.8rem;
+      margin-left: 0.4rem;
+      transition: background-color 0.2s ease;
+    }
 
-#endnotes a.return-link:hover {
-    background-color: #e0e0e0;
-    color: #333;
-}
-
+    #endnotes a.return-link:hover {
+      background-color: #e0e0e0;
+      color: #333;
+    }
 
     @media (max-width: 900px) {
       .sidenote {
@@ -313,24 +312,26 @@
     <p>
       Writing is not the afterthought of thought. It <em>is</em> thinking. Often, it is the <a href="https://www.bournemouth.ac.uk/">discipline</a> through which thinking crystallises—through return, through revision, through reordering, we impose coherence on chaos.<span id="ref-1" class="sidenote-number"><a href="#endnote-1" onclick="toggleSidenote(1, event)"><sup>1</sup></a></span>
       <span id="sidenote-1" class="sidenote collapsible" data-number="1"> This is a sidenote. It sits to the right on large screens, and drops below on mobile.</span>
-      <p>Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span><span id="sidenote-2" class="sidenote collapsible" data-number="2"> Recursion here does not mean repetition, but progressive transformation.</span> Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
-</p>
+    </p>
+
+    <p>Writing is a recursive gesture.<span id="ref-2" class="sidenote-number"><a href="#endnote-2" onclick="toggleSidenote(2, event)"><sup>2</sup></a></span><span id="sidenote-2" class="sidenote collapsible" data-number="2"> Recursion here does not mean repetition, but progressive transformation.</span> Those days, there used to be a tea stall just outside North Campus, run by a Malayalee named Raman Kutty, famous for his parippuvada—golden, spiced fritters made from ground lentils, crisp on the outside and soft within. They were the kind of snack that made Delhi winters bearable. That day, I had just snagged the last two when a soft voice behind me said: “Parippuvada unda?”
+    </p>
+
     <p>The performers summon a their entire universe—bosses, colleagues, even the acquaintance who nodded at them in 2016. Thank you to my incredible team, they write. And the hashtags? They sprout faster than thought leader bios. The crowd obliges with predictable praise: So inspiring! What a legend!
-</p>
-<p></p>And the performers They bask, heads tilted just enough to feign surprise. Yes.
-</p>
-<p>Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
+    </p>
+
+    <p>And the performers? They bask, heads tilted just enough to feign surprise. Yes.</p>
+
+    <p>Then, we have the plodders. They know they should be here but aren’t quite sure why. They’re the extras, wandering in from the wings, unsure if the spotlight is meant for them. Completed a project today, they write. Attended a workshop on leadership. Excited to kick off 2025 as Chief Visionary Officer for Purpose-Driven Synergy at igotanewjob.com. Their posts shuffle into a world crowded with dramatists, awkward and unpolished but somehow endearing in their sincerity.
     </p>
   </section>
 
   <section id="endnotes">
     <h2>Endnotes</h2>
-
     <p id="endnote-1">
       <sup>1</sup> This is a sidenote. Yes. It sits to the right on large screens, and drops below on mobile.
       <a href="#ref-1" class="return-link">↩</a>
     </p>
-
     <p id="endnote-2">
       <sup>2</sup> Recursion here does not mean repetition, but progressive transformation.
       <a href="#ref-2" class="return-link">↩</a>
