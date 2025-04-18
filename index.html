@@ -220,14 +220,25 @@
     }
 
     #endnotes a.return-link {
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-left: 0.4rem;
-      color: #111;
-      font-family: 'et-book', Georgia, serif;
-      vertical-align: baseline;
-      line-height: 1;
-    }
+    text-decoration: none;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+    transition: background-color 0.2s ease;
+}
+
+#endnotes a.return-link:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
 
     @media (max-width: 900px) {
       .sidenote {
