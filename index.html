@@ -39,6 +39,13 @@
     .byline span {
       font-weight: normal;
     }
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 1.8rem;
+      line-height: 1.5;
+    }
     .section-number {
       text-align: center;
       font-size: 1.1rem;
@@ -214,10 +221,12 @@
         if (event) event.preventDefault();
       }
     }
+
     function toggleMobileNav() {
       const nav = document.getElementById('mobileNav');
       nav.classList.toggle('active');
     }
+
     document.addEventListener('DOMContentLoaded', () => {
       const links = document.querySelectorAll('#mobileNav a');
       links.forEach(link => {
@@ -270,63 +279,104 @@
   </nav>
   <header>
     <h1>The Age of Generation, the End of Thought</h1>
-    <h2 class="subtitle">A public essay in development</h2>
+    <h2 class="subtitle">What place can the university—once a shelter for thought—claim in an altered world of synthetic thinking?</h2>
     <div class="byline"><span>C</span>hindu <span>S</span>reedharan</div>
   </header>
 
   <!-- INSERT FULL PROLOGUE SECTION HERE -->
   <section id="prologue">
     <div class="section-number">Prologue</div>
-  
     <p class="raised">Is the university a place? Was it ever, really?</p>
+    
 
     <p>We tend to think of it as a campus: ivy-covered walls, long corridors, lecture halls with bad sightline, a library. But even at its most concrete, it was always something more.</p>
   
-    <p>What distinguished the university was not its architecture—though that, too,  was often remarkable—but its role as a site of intellectual pursuit, and the grammar it offered for that labour: the rules, forms, and disciplines that gave inquiry structure and rigour. It was a system that gave shape to the chaos of our thoughts, a scaffolding that enabled us to transform over time. Place mattered, then, not as enclosure, but as ground: a foundation for a culture of thinking to emerge—through ritual, repetition, and institutional memory. Long before the rise of digital connectivity, the university was anchored in what sociologist Manuel Castells would later describe as a “space of places”<span id="ref-1" class="sidenote-number"></span><span class="sidenote collapsible">In <em>The Rise of the Network Society</em> (1996), Manuel Castells  distinguishes between the space of places—physical, situated, embedded in local social structures—and the space of flows: a new spatial logic shaped by digital networks, global circulation, and the abstracted movement of information. The university, long rooted in the former, has increasingly been drawn into the latter. I return to this—and its implications for knowledge, presence, and power—in a later section.</span>: bounded, situated, present.</p>
+    <p>What distinguished the university was not its architecture—though that, too,  was often remarkable—but its role as a site of intellectual pursuit, and the structure it provided for that labour: the rules, forms, and disciplines that gave inquiry rigour and replicability. It was a system that gave shape to the chaos of our thoughts, a scaffolding that enabled us to transform over time. Place mattered, then, not as enclosure, but as ground: a foundation for a culture of thinking to emerge—through ritual, repetition, and institutional memory. Long before the rise of digital connectivity, the university was anchored in what sociologist Manuel Castells would later describe as a “space of places”<span id="ref-1" class="sidenote-number"></span><span class="sidenote collapsible">In <em>The Rise of the Network Society</em> (1996), Manuel Castells  distinguishes between the space of places—physical, situated, embedded in local social structures—and the space of flows: a new spatial logic shaped by digital networks, global circulation, and the abstracted movement of information. The university, long rooted in the former, has increasingly been drawn into the latter. I return to this—and its implications for knowledge, presence, and power—in a later section.</span>: bounded, situated, present.</p>
   
     <p>A long time ago, when I began my PhD, my supervisor—half Gandalf, half Bhishmacharya—told me the first six months would be marked by confusion. Not the kind I could shake off, but the kind I would need to stay with: days when nothing connects, when texts resist interpretation, when the thread of inquiry wraps itself around you, twisted and tightening. At the time, I thought he was preparing me for the hardship of the academy. Later, I understood he was describing the texture of intellectual labour.</p>
-  
-    <p>Confusion isn’t confined to the university. It is a shared trait of serious work—the hours spent around an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to understand that confusion was not the opposite of clarity; it was its precondition. The university offered a way to move towards knowledge. It gave you the courage, the epistemological confidence, that if you stayed with uncertainty long enough, something coherent would emerge. Confusion, then, was not a failure of thinking, but its method.</p>
-  
-    <p>Some weeks ago, I sat in a meeting of PhD supervisors. The conversation turned—as it often does now—to students using AI to write. My colleague, wise and bespectacled, stereotypically professorial except for the missing elbow patches, said flatly: AI just can’t produce doctoral-level work. No one disagreed. Which, in academia, is saying something.</p>
-  
-    <p>He was mostly right. He was talking, primarily, about writing. The outputs are often fluent in form but hollow at the core—not, I think, because current models are incapable of decent writing, but because most students don’t yet know how to use them well. In the hands of a doctoral candidate adept with generative AI, I suspect, a passable thesis could already be assembled.</p>
-  
-    <p>But there is danger in separating writing from thinking. Writing, I would argue, is not the afterthought of thought. It is thinking. Often, it is the discipline through which thought crystallises—through return, through revision, through reordering, we impose coherence on chaos.</p>
-  
     <p>What’s deeply unsettling is not that AI<span id="ref-2" class="sidenote-number"></span><span class="sidenote collapsible">I use 'AI' as a broad term in this essay. In the early sections, it refers primarily to generative systems—models that simulate fluency, pattern, and response, such as large language models. In later sections, where I sketch future possibilities, the term encompasses a wider set of computational systems, including robotics.</span> can produce fluent, plausible ‘scholarship’. It’s that it can simulate the process we once believed gave rise to such work. It assembles arguments, stages counterpoints, anticipates objections. It performs the gestures of thought—without submitting the user to the confusion, the hesitation, the slow wrestle that accompanies the making of knowledge. And in systems where ‘performance’ and ‘articulation’ are paramount—and we are in one, with scaffolding built to reward fluency over formation—that simulation may not just be sufficient. It may even be seen as superior.</p>
   
+    <p>Confusion isn’t confined to the university. It is a shared trait of deep work—the hours spent around an idea, sorting signal from noise, trying to say what isn’t yet clear, even to yourself. Over time, I came to understand that confusion was not the opposite of clarity; it was its precondition. The university offered a way to move towards knowledge. It gave you the courage, the epistemological confidence, that if you stayed with uncertainty long enough, something coherent would emerge. Confusion, then, was not a failure of thinking, but its method.</p>
+ 
+    <p>Some weeks ago, I sat in a meeting of PhD supervisors. The conversation turned—as it often does now—to students using AI to write. My colleague, wise and bespectacled, stereotypically professorial except for the missing elbow patches, said flatly: AI just can’t produce doctoral-level work. No one disagreed. Which, in academia, is saying something.</p> 
+    
+    <p>He was mostly right. He was talking, primarily, about writing. The outputs are often fluent in form but hollow at the core—not, I think, because current models are incapable of decent writing, but because most students don’t yet know how to use them well. In the hands of a doctoral candidate adept with generative AI, I suspect, a passable thesis could already be assembled.</p>
+    
+    <p>But there is danger in separating writing from thinking. Writing, I would argue, is not the afterthought of thought. It is thinking. Often, it is the discipline through which thought crystallises—through return, through revision, through reordering, we impose coherence on chaos.</p>
+    
+    
     <p>Concrete expressions of that orientation may already be visible—in what the university no longer makes room for, in what it now increasingly offers: alien credentials, lighter, faster, more portable than even PDFs, designed to serve a global market, but steeped in the epistemic culture of the place that produced them. Along streamlined pathways, smoothed for success, they seem to extend the university’s model outward, rather than co-creating with diverse contexts. One could argue that the guardrails of chaos have been cleared away, so that failure—once the fulcrum of learning—is no longer an option, and the learner falls, headlong, into certainty. Confusion is no longer friend. And place, once a condition for slow, situated thought, appears to survive mostly in name—its cadence lost, its identity flattened into a brand: exportable, extractive.</p>
-  
-    <p>In this world of anti-confusion, what is the logic that AI brings to the university? Much of the academy frames it as a threat. But what if the real danger is not that it disrupts, but that it doesn’t disrupt enough? That it accelerates a logic the university has already embraced: one that privileges certainty over uncertainty, performance over process?</p>
-  
-    <p>In this essay, I explore that possibility<span id="ref-3" class="sidenote-number"></span><span class="sidenote collapsible">Throughout, I refer to ‘the university’ in the singular—not to flatten its diverse histories, but to speak to the shared logics and structures that have come to define it as a global form.</span>. AI enrolled in the academy at a moment of institutional precarity—post-Covid, and under the weight of long-building pressures. Falling enrolments, proliferating credentials, and a finite game<span id="ref-4" class="sidenote-number"></span><span class="sidenote collapsible">The phrase is from James P Carse’s <em>Finite and Infinite Games: A Vision of Life as Play and Possibility</em>, which distinguishes between finite games—played to win—and infinite games—played to continue the play. The university, in this framing, increasingly resembles the former.</span> played across transnational markets had created an environment in which too many degrees chased too few students—and too little time remained to ask what the university was still for. In this climate, AI’s arrival was met with a mix of reactions: moral panic, technocratic enthusiasm, and an institutional apparatus quick to accommodate a technology it barely understood. That convergence is the terrain this essay traces.</p>
-  
+    
+    <p>In this world of anti-confusion, what is the logic that AI brings to the university? Much of the academy frames it as a threat. But what if the real danger is not that it disrupts, but that it doesn’t disrupt enough? That it accelerates a logic the university<span id="ref-3" class="sidenote-number"></span><span class="sidenote collapsible">Throughout, I refer to ‘the university’ in the singular—not to flatten its diverse histories, but to speak to the shared logics and structures that have come to define it as a global form.</span> has already embraced: one that privileges certainty over uncertainty, performance over process?</p>
+    
+    <p>In this essay, I explore that possibility. AI enrolled in the academy at a moment of institutional precarity—post-Covid, and under the weight of long-building pressures. Falling enrolments, proliferating credentials, and a finite game<span id="ref-4" class="sidenote-number"></span><span class="sidenote collapsible">The phrase is from James P Carse’s <em>Finite and Infinite Games: A Vision of Life as Play and Possibility</em>, which distinguishes between finite games—played to win—and infinite games—played to continue the play. The university, in this framing, increasingly resembles the former.</span> played across transnational markets had created an environment in which too many degrees chased too few students—and too little time remained to ask what the university was still for. In this climate, AI’s arrival was met with a mix of reactions: moral panic, technocratic enthusiasm, and an institutional apparatus quick to accommodate a technology it barely understood. That convergence is the terrain this essay traces.</p>
+    
     <p>In this age of generation, what kind of university is AI helping to consolidate—and what kind might still be reimagined, if we’re willing to slow down and ask harder questions?</p>
-  
+    
     <p>I begin with the university—before it became the institution we know today—tracing its deep and plural beginnings, from ancient centres of learning in Asia and North Africa to the medieval guilds of Europe. I ask what these early forms were built to serve, follow how their purposes evolved across traditions, and consider how place once offered a structure for sustained thought.</p>
-  
+    
     <p>I then turn to the structural changes of recent decades: the spread of credentialism, the ascendancy of management, and the rise of what we might call performative education—where fluency is rewarded more than depth, and polish often stands in for process. How have these changes reshaped the university’s expectations—of students, of knowledge, of learning itself?</p>
-  
+    
+    
     <p>In the third section, I examine AI’s arrival—not only the systems, but the ripple of reactions it has provoked across pedagogy, policy, and institutional life. What does this moment reveal about the university’s deeper orientation? What kinds of thinking are being challenged, and what kinds quietly preserved?</p>
-  
+    
     <p>From there, I track the deeper realignments already underway: the illusion of adaptation, the slow erosion of legitimacy, and the long-term trajectories now gathering force.</p>
-  
+    
     <p>In the final section, the essay looks forward—to what the university might become, could become. I offer eight propositions, to hold in our collective mind. From these, the essay opens outward again, sketching possibilities for how the university might live in a changed world.</p>
   </section>
 
-
-
-
-
-  <!-- And ensure endnotes section also follows -->
-
   
-  <section id="endnotes">
+   <!-- INSERT FULL PROLOGUE SECTION HERE -->
+
+ 
+  <section id="genesis">
+    <div class="section-number">Genesis</div>
+  
+    <p>The story we often tell of the university begins somewhere around the eleventh century in Europe. But the idea of a place for higher learning stretches back further, across multiple traditions and epistemic lineages.</p>
+  
+    <p>Long before Bologna or Paris, scholarly communities flourished across Asia, North Africa, and the Islamic world. From Nalanda in eastern India to Al-Qarawiyyin in Morocco, from Taxila in present-day Pakistan to Al-Azhar in Cairo, these were institutions of inquiry—shaped by the cultural and spiritual logics of their time. They offered instruction and infrastructure: libraries, debate halls, traditions of commentary and critique. Some were led by iconic figures less visible in modern retellings.</p>
+  
+    <p>In fifth-century Alexandria, for instance, the philosopher and mathematician Hypatia taught, defying both gender norms and rising orthodoxy. Such was her popularity that townsfolk often crowded her door—“a great crush,” “a confusion of men and of horses”—waiting for her address<span id="ref-5" class="sidenote-number"></span><span class="sidenote collapsible">In <em>Who's Hypatia? Whose Hypatia Do You Mean?</em>, Hardy Grant draws on historical accounts describing how citizens and students crowded outside Hypatia’s home—on horseback and foot—eager to hear her speak. See <em>Math Horizons</em>, 16:4, 11–15. DOI: 10.1080/10724117.2009.11974823.</span>.</p>
+  
+    <p>In ninth-century Fez, Fatima al-Fihri founded what is often cited as the world’s oldest continually operating university. And at the great monastic halls of Nalanda, as early as the sixth and seventh century, thousands of students from as far as Korea and China gathered to study logic, grammar, and medicine—often through multi-day debates in red-brick courtyards<span id="ref-6" class="sidenote-number"></span><span class="sidenote collapsible">In <em>The Ancient Nalanda Mahavihara: The Beginning of Institutional Learning in Ancient Indian Education System</em>, Pintu Kumar draws on historical accounts from travellers such as Hiuen Tsang and I-Tsing to describe Nalanda’s international student body, competitive admissions interviews, and a pedagogical culture centred on oral debate. See <em>Journal of the World Universities Forum</em>, 4:1, 68–78.</span>. Admission was selective: fewer than one in three passed the equivalent of a modern academic interview—conducted by senior scholars who questioned applicants on foundational texts—in a tradition now quietly disappearing from the university.</p>
+  
+    <p>What emerged in Europe, then, was not the first site of higher learning—but an evolution, forged in a different cultural and political crucible. Like Nalanda, it was self-governing. But where monastic centres were guided by councils of scholars and spiritual traditions, the European university was shaped by guild structures, legal privileges, and the growing reach of Church and Crown. It credentialed, codified, and professionalised. It trained clerics, jurists, and physicians, and organised the pursuit of knowledge into faculties, degrees, and disciplines. This was its innovation: the university not just as a site of learning, but as a structure for organising it—with its own rhythm, rites, and rituals to sustain inquiry and confer legitimacy.</p>
+  
+    <p>This form gave rise to several traditions, each carrying a different view of what the university was for. The Oxbridge model, most famously articulated by John Henry Newman in the mid-nineteenth century, imagined the university as a space for liberal education and the formation of the gentleman. In <em>The Idea of a University</em>, Newman insisted that the aim was not research, but cultivation: a habit of mind shaped through breadth, reason, and exposure to multiple disciplines. Education, for Newman, was a process of steady shaping. It brought “the mind into form”, much as training brings muscle into definition. “This is real cultivation of mind,” he wrote, “and I do not deny that the characteristic excellences of a gentleman are included in it.”</p>
+  
+    <p>In this vision, knowledge was not pursued for its own sake. It was extended and refined through exposure to well-ordered thought. Newman prized formation over discovery: a vision of intellectual and moral cultivation within a closed, orderly environment. This vision of cultivation would travel—often uncritically—alongside the empire.</p>
+  
+    <p>By the late nineteenth century, three dominant models<span id="ref-7" class="sidenote-number"></span><span class="sidenote collapsible">See S Datta’s <em>A History of the Indian University System</em> for a discussion.</span> of the university had emerged in the West—each shaped by its own cultural and political imperatives. The Newmanian model prioritised liberal education and the moral formation of individuals. The Napoleonic model, forged in the aftermath of the French Revolution, aligned the university with the state, focused on credentialing and training professionals for civil administration. And the Humboldtian model, emerging from Germany, placed original research at the centre of academic life—fusing teaching and inquiry in the name of <em>Bildung</em>, the development of the individual through self-directed intellectual pursuit.</p>
+  
+    <p>Writing in the late twentieth century, Jürgen Habermas returned to the Humboldtian vision—first to dismantle the impracticality of its “narcissistic self-enclosed process of research and teaching”, then to ask what might still be salvaged. He critiqued the classical reformers for believing that a modern university could still be bound by a single guiding idea. “The assertion of unbroken faithfulness to Humboldt”, he wrote, “is the life-lie of our universities.”</p>
+  
+    <p>That coherence, he argued, had long since broken down under the weight of disciplinary silos, systemic differentiation<span id="ref-8" class="sidenote-number"></span><span class="sidenote collapsible">Habermas refers to the way social systems (e.g. the economy, law, science) become increasingly specialised and autonomous. In the university, this manifests as fragmentation: research, teaching, and professional training follow distinct logics, often disconnected from shared cultural or democratic aims.</span>, and market logic. And yet something endured. The university’s functions—research, education, public discourse, and cultural reflection—still endured, woven together in learning processes. Its coherence, he suggested, lay not in a unifying ideal, but in “the discursive forms of scientific argumentation”. For Habermas, the university could still be a site of critical thought and judgement—not in the idealist, inward-looking form the reformers had imagined, but by engaging and communicating with society to enlighten culture, politics, and science.</p>
+  
+    <p>If Habermas saw discursive practices—“communicative rationality”, as he called it—as a way to hold the university’s functions together, others saw the fragmentation as a natural evolution. In the United States, the university expanded into a “multiversity”—a term promoted by Clark Kerr in the 1960s. “The university started as a single community—a community of masters and students,” Kerr wrote in <em>The Uses of the University</em>. The multiversity is “not one community but several”,  “its edges fuzzy”, held together “by a common name, a common governing board”—and, as he noted with wry precision, a “common grievance over parking”.</p>
+  
+    <p>Unlike the self-contained model of the classicists, Kerr’s multiversity was not a sanctuary that stood apart from the society, but an institution deeply embedded within it—one it served “almost slavishly”, even as it criticised it “sometimes unmercifully”. It linked arms with industry, defence, and government. It absorbed the priorities of the Cold War state and the post-war economy. It held contradictions and responded to the competing demands of a complex society. In this, Kerr captures a dynamic that would later resonate with thinkers such as Habermas: the university was not sheltered from society, but recalibrated to serve it—practically, intellectually, and institutionally.</p>
+  
+    <p>What emerges across these diverse traditions—from Alexandria to Nalanda, from Newman to Humboldt and Habermas, and Kerr—is not a single, stable idea of the university, but a shared wager: that thought is worth protecting. The university offered the architecture, rhythm and freedom to sustain it. It offered spaces in which thinking, reasoning, and reflection could unfold, where contradictions and confusion could exist and be worked through.</p>
+  
+    <p>The Alexandrian Museum of Hypatia’s time offered stipends and space for the cultivation of thought. Its scholars walked together, debated together, dined together. Nalanda’s monastic architecture created pockets of unhurried study, where students rehearsed argument, reflection, and intellectual hospitality. Newman, writing centuries later, imagined the university as a protected sphere of liberal cultivation: “a place of teaching universal knowledge,” in which the goal was not application, but formation—a “habit of mind” marked by moderation, breadth, and coherence. For Humboldt, the pursuit of intellectual and moral self-formation was critical. For Habermas, the university remained a site of learning processes vital to democratic life.</p>
+  
+    <p>All understood thinking does not happen by accident. It asks for form. For friction. For time. The university, at its strongest, offered those conditions, defending it across generations.</p>
+  
+    <p>Until, almost imperceptibly, those conditions began to erode.</p>
+  </section>
+  
+  
+  
+  
+  
+  
+  <!-- And ensure endnotes section also follows -->
+  
+   <section id="endnotes">
+    <sup>1</sup> In <em>The Rise of the Network Society</em> (1996), Manuel Castells distinguishes between the space of places—physical, situated, embedded in local social structures—and the space of flows: a new spatial logic shaped by digital networks, global circulation, and the abstracted movement of information. The university, long rooted in the former, has increasingly been drawn into the latter. I return to this—and its implications for knowledge, presence, and power—in a later section.
     <h2>Endnotes</h2>
   
     <p id="endnote-1">
-      <sup>1</sup> In <em>The Rise of the Network Society</em> (1996), Manuel Castells distinguishes between the space of places—physical, situated, embedded in local social structures—and the space of flows: a new spatial logic shaped by digital networks, global circulation, and the abstracted movement of information. The university, long rooted in the former, has increasingly been drawn into the latter. I return to this—and its implications for knowledge, presence, and power—in a later section.
       <a href="#ref-1" class="return-link">↩</a>
     </p>
   
@@ -344,6 +394,26 @@
       <sup>4</sup> The phrase is from James P Carse’s <em>Finite and Infinite Games: A Vision of Life as Play and Possibility</em>, which distinguishes between finite games—played to win—and infinite games—played to continue the play. The university, in this framing, increasingly resembles the former.
       <a href="#ref-4" class="return-link">↩</a>
     </p>
+
+    <p id="endnote-5">
+      <sup>5</sup> In Who's Hypatia? Whose Hypatia Do You Mean?, Hardy Grant draws on historical accounts describing how citizens and students crowded outside Hypatia’s home—on horseback and foot—eager to hear her speak. See <em>Math Horizons</em>, 16:4, 11–15. DOI: 10.1080/10724117.2009.11974823.
+      <a href="#ref-5" class="return-link">↩</a>
+    </p>
+    
+    <p id="endnote-6">
+      <sup>6</sup> In <em>The Ancient Nalanda Mahavihara: The Beginning of Institutional Learning in Ancient Indian Education System</em>, Pintu Kumar draws on historical accounts from travellers such as Hiuen Tsang and I-Tsing to describe Nalanda’s international student body, competitive admissions interviews, and a pedagogical culture centred on oral debate. See <em>Journal of the World Universities Forum</em>, 4:1, 68–78.
+      <a href="#ref-6" class="return-link">↩</a>
+    </p>
+    
+    <p id="endnote-7">
+      <sup>7</sup> See S Datta’s <em>A History of the Indian University System</em> for a discussion.
+      <a href="#ref-7" class="return-link">↩</a>
+    </p>
+    
+    <p id="endnote-8">
+      <sup>8</sup> Habermas refers to the way social systems (e.g. the economy, law, science) become increasingly specialised and autonomous. In the university, this manifests as fragmentation: research, teaching, and professional training follow distinct logics, often disconnected from shared cultural or democratic aims.
+      <a href="#ref-8" class="return-link">↩</a>
+    </p>    
   </section>
   
 
