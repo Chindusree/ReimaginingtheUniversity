@@ -200,12 +200,21 @@
       font-size: 0.75rem;
       color: #999;
     }
+
     #endnotes a.return-link {
-      text-decoration: none;
-      font-size: 0.85rem;
-      color: #000;
-      margin-left: 0.35rem;
-    }
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #000;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 0.35rem;
+  font-family: inherit;
+}
+#endnotes a.return-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #999;
+}
   </style>
   <script>
     function toggleSidenote(id, event) {
@@ -325,7 +334,7 @@
     <p>In the final section, the essay looks forward—to what the university might become, could become. I offer eight propositions, to hold in our collective mind. From these, the essay opens outward again, sketching possibilities for how the university might live in a changed world.</p>
   </section>
 
-  
+
    <!-- INSERT FULL PROLOGUE SECTION HERE -->
 
  
@@ -364,14 +373,8 @@
   
     <p>Until, almost imperceptibly, those conditions began to erode.</p>
   </section>
-  
-  
-  
-  
-  
-  
-  
-   <!-- And ensure endnotes section also follows -->
+
+    
 <section id="endnotes">
   <h2>Endnotes</h2>
 
@@ -412,10 +415,9 @@
 
   <p id="endnote-8">
     <sup>8</sup> Habermas refers to the way social systems (e.g. the economy, law, science) become increasingly specialised and autonomous. In the university, this manifests as fragmentation: research, teaching, and professional training follow distinct logics, often disconnected from shared cultural or democratic aims.
-  </p>
     <a href="#ref-8" class="return-link">↩</a>
+  </p>
+
 </section>
-
-
 </body>
 </html>
