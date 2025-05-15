@@ -306,55 +306,69 @@
 
 
   </style>
-  <script>
-    function toggleSidenote(id, event) {
-      if (window.innerWidth > 900) {
-        const note = document.getElementById(`sidenote-${id}`);
-        if (note.classList.contains('active')) {
-          note.classList.remove('active');
-        } else {
-          const allNotes = document.querySelectorAll('.sidenote');
-          allNotes.forEach(n => n.classList.remove('active'));
-          note.classList.add('active');
-        }
-        if (event) event.preventDefault();
+<script>
+  function toggleSidenote(id, event) {
+    if (window.innerWidth > 900) {
+      const note = document.getElementById(`sidenote-${id}`);
+      if (note.classList.contains('active')) {
+        note.classList.remove('active');
+      } else {
+        const allNotes = document.querySelectorAll('.sidenote');
+        allNotes.forEach(n => n.classList.remove('active'));
+        note.classList.add('active');
       }
+      if (event) event.preventDefault();
     }
+  }
 
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('active');
-    }
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const sidenotes = document.querySelectorAll('.sidenote');
-      sidenotes.forEach((note, index) => {
-        const number = index + 1;
-        note.setAttribute('id', `sidenote-${number}`);
-        note.setAttribute('data-number', number);
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidenotes = document.querySelectorAll('.sidenote');
+    sidenotes.forEach((note, index) => {
+      const number = index + 1;
+      note.setAttribute('id', `sidenote-${number}`);
+      note.setAttribute('data-number', number);
 
-        const ref = document.getElementById(`ref-${number}`);
-        if (ref) {
-          ref.innerHTML = `<a href='#endnote-${number}' onclick='toggleSidenote(${number}, event)'><sup>${number}</sup></a>`;
-        }
-      });
-
-      const endnotesContainer = document.getElementById('endnotes');
-      if (endnotesContainer) {
-        endnotesContainer.innerHTML = '<h2>Endnotes</h2>';
-        sidenotes.forEach((note, index) => {
-          const number = index + 1;
-          const endnote = document.createElement('div');
-          endnote.setAttribute('id', `endnote-${number}`);
-          endnote.innerHTML = `
-            <p><sup>${number}</sup> ${note.innerHTML}
-              <a class="return-link" href="#ref-${number}">&#8617;</a>
-            </p>`;
-          endnotesContainer.appendChild(endnote);
-        });
+      const ref = document.getElementById(`ref-${number}`);
+      if (ref) {
+        ref.innerHTML = `<a href='#endnote-${number}' onclick='toggleSidenote(${number}, event)'><sup>${number}</sup></a>`;
       }
     });
-  </script>
+
+    const endnotesContainer = document.getElementById('endnotes');
+    if (endnotesContainer) {
+      endnotesContainer.innerHTML = '<h2>Endnotes</h2>';
+      sidenotes.forEach((note, index) => {
+        const number = index + 1;
+        const endnote = document.createElement('div');
+        endnote.setAttribute('id', `endnote-${number}`);
+        endnote.innerHTML = `
+          <p><sup>${number}</sup> ${note.innerHTML}
+            <a class="return-link" href="#ref-${number}">&#8617;</a>
+          </p>`;
+        endnotesContainer.appendChild(endnote);
+      });
+    }
+
+    // ✅ Add tap-outside-to-close mobile nav functionality
+    document.addEventListener('click', function (event) {
+      const nav = document.getElementById('mobileNav');
+      const toggle = document.querySelector('.mobile-nav-toggle');
+      if (!nav || !toggle) return;
+
+      const isClickInsideNav = nav.contains(event.target);
+      const isClickOnToggle = toggle.contains(event.target);
+
+      if (nav.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+        nav.classList.remove('active');
+      }
+    });
+  });
+</script>
 </head>
 
 <body>
